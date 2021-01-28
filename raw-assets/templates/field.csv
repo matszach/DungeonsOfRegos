@@ -1,0 +1,3 @@
+key,name,spriteset,blocksMove,blocksSight
+floor,Floor,floors,false,false
+wall,Wall,walls,true,false

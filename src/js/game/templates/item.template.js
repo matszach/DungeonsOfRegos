@@ -1,0 +1,2 @@
+const ITEM_TEMPLATES = {
+};
