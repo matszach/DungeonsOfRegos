@@ -36,4 +36,16 @@ class Rng {
     shuffle(arr) {
         return this.gen.shuffle(arr);
     }
+
+    weightedPick(...choices) {
+        const options = [];
+        choices.forEach(choice => {
+            for(let i = 0; i < choice[1]; i++) {
+                options.push(choice[0]);
+            }
+        });
+        return this.pick(options);
+    }
+
+    
 }

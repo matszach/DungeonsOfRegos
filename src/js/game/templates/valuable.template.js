@@ -1,0 +1,2 @@
+const VALUABLE_TEMPLATES = {
+};

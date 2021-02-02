@@ -1,12 +1,15 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="css/styles.css">
+		<script src='js/game/templates/apparel.template.js'></script>
+		<script src='js/game/templates/consumable.template.js'></script>
 		<script src='js/game/templates/field.template.js'></script>
-		<script src='js/game/templates/item.template.js'></script>
 		<script src='js/game/templates/node.enum.js'></script>
 		<script src='js/game/templates/pc.template.js'></script>
+		<script src='js/game/templates/rarity.enum.js'></script>
 		<script src='js/game/templates/room.template.js'></script>
-		<script src='js/game/templates/slot.enum.js'></script>
+		<script src='js/game/templates/type.enum.js'></script>
+		<script src='js/game/templates/valuable.template.js'></script>
 		<script src='js/game/templates/weapon.template.js'></script>
 		<script src='js/game/const/sizes.js'></script>
 		<script src='js/lib/phaser.js'></script>
@@ -36,8 +39,11 @@
 		<script src='js/game/fields/final-fields/FloorField.js'></script>
 		<script src='js/game/fields/final-fields/WallField.js'></script>
 		<script src='js/game/items/Item.js'></script>
-		<script src='js/game/items/ItemEntity.js'></script>
+		<script src='js/game/items/Equippable.js'></script>
 		<script src='js/game/items/Weapon.js'></script>
+		<script src='js/game/items/Valuable.js'></script>
+		<script src='js/game/items/Money.js'></script>
+		<script src='js/game/items/ItemEntity.js'></script>
 		<script src='js/game/factories/modules/FieldFactory.js'></script>
 		<script src='js/game/factories/modules/FieldTypeMapBuilder.js'></script>
 		<script src='js/game/factories/modules/ItemFactory.js'></script>

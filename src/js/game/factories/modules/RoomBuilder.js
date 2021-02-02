@@ -1,7 +1,6 @@
 class RoomBuilder {
 
-    constructor(rng) {
-        this.rng = rng;
+    constructor() {
         this._nodes;
         this._entryRoom;
         this._exitRoom;
@@ -26,7 +25,7 @@ class RoomBuilder {
     }
 
     _node(x, y, type, chance) {
-        if(this.rng.chance(chance || 1)) {
+        if(Root.rng.chance(chance || 1)) {
             this._nodes.push({
                 x: x,
                 y: y,
@@ -47,11 +46,11 @@ class RoomBuilder {
                 rb._regularRooms.push(r);
             }
         });
-        this.rng.shuffle(endRooms);
-        this.rng.shuffle(this._regularRooms);
+        Root.rng.shuffle(endRooms);
+        Root.rng.shuffle(this._regularRooms);
         this._exitRoom = endRooms.pop();
         endRooms.push(this._regularRooms.pop());
-        this.rng.shuffle(endRooms);
+        Root.rng.shuffle(endRooms);
         this._keyRoom = endRooms.pop();
         this._regularRooms.push.apply(this._regularRooms, endRooms);
     }
@@ -81,22 +80,22 @@ class RoomBuilder {
     }
 
     _pickRoom() {
-        const room = Object.assign({}, this.rng.pick(ROOM_TEMPLATES));
+        const room = Object.assign({}, Root.rng.pick(ROOM_TEMPLATES));
 
         // flip x
-        if(this.rng.chance(0.5)) {
+        if(Root.rng.chance(0.5)) {
             room.walls.forEach(w => w.x = 6 - w.x);
             room.nodes.forEach(w => w.x = 6 - w.x);
         } 
 
         // flop y 
-        if(this.rng.chance(0.5)) {
+        if(Root.rng.chance(0.5)) {
             room.walls.forEach(w => w.y = 6 - w.y);
             room.nodes.forEach(w => w.y = 6 - w.y);
         } 
 
         // rotate
-        const rotation = this.rng.pick([0, 90, 180, 270]);
+        const rotation = Root.rng.pick([0, 90, 180, 270]);
         if(rotation === 0) {
             // no need
         } else if(rotation === 90) {

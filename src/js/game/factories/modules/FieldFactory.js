@@ -1,9 +1,5 @@
 class FieldFactory {
 
-    constructor(rng) {
-        this.rng = rng;
-    }
-    
     create(x, y, fieldMap) {
         const id = fieldMap.get(x, y);
         switch(id) {
@@ -88,7 +84,7 @@ class FieldFactory {
 
     _createFloor(x, y, fieldMap) {
         const f = new FloorField();
-        f.setFrame(this.rng.int(0, 31));
+        f.setFrame(Root.rng.int(0, 31));
         return f;
     }
 

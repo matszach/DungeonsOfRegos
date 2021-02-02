@@ -1,0 +1,32 @@
+const CONSUMABLE_TEMPLATES = {
+	L_HEAL: {
+		id: 0,
+		name: 'Light healing potion',
+		spriteset: 'potions',
+		frame: 0,
+		type: 10.0,
+		value: 'HEALING 10-20',
+		effect: '-',
+		rarity: 'COMMON',
+	},
+	M_HEAL: {
+		id: 1,
+		name: 'Medium healing potion',
+		spriteset: 'potions',
+		frame: 10.0,
+		type: 25.0,
+		value: 'HEALING 20-40',
+		effect: '-',
+		rarity: 'UNCOMMON',
+	},
+	G_HEAL: {
+		id: 2,
+		name: 'Greater healing potion',
+		spriteset: 'potions',
+		frame: 30.0,
+		type: 75.0,
+		value: 'HEALING 40-60',
+		effect: '-',
+		rarity: 'RARE',
+	},
+};

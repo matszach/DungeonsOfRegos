@@ -1,7 +1,6 @@
 class FieldTypeMapBuilder {
 
-    constructor(rng) {
-        this.rng = rng;
+    constructor() {
         this._layout; // maze life relation layout
         this._roomLayout;
         this._fieldMap;
@@ -20,8 +19,8 @@ class FieldTypeMapBuilder {
 
     _initLayout(diff, depth, player) {
         const size = (5 + diff + depth);
-        const lx = this.rng.int(0.4 * size, 0.6 * size);
-        const ly = this.rng.int(0.4 * size, 0.6 * size);
+        const lx = Root.rng.int(0.4 * size, 0.6 * size);
+        const ly = Root.rng.int(0.4 * size, 0.6 * size);
         const layout = new Table2D(lx, ly);
         layout.assign((x, y) => {
             return {
@@ -51,8 +50,8 @@ class FieldTypeMapBuilder {
     }
 
     _buildLayout() {   
-        const initialX = this.rng.int(0, this._layout._xSize - 1);
-        const initialY = this.rng.int(0, this._layout._ySize - 1);
+        const initialX = Root.rng.int(0, this._layout._xSize - 1);
+        const initialY = Root.rng.int(0, this._layout._ySize - 1);
         let current = this._layout.get(initialX, initialY);
         current.visited = true;
         current.root = true;
@@ -76,7 +75,7 @@ class FieldTypeMapBuilder {
     
              // found at least one path
             if(possible.length > 0) {
-                let dir = this.rng.pick(possible);
+                let dir = Root.rng.pick(possible);
                 let nextCell;
                 if(dir == 'UP') {
                     nextCell = this._layout.get(current.x, current.y - 1);
@@ -150,8 +149,8 @@ class FieldTypeMapBuilder {
                 }    
             }
             if(room.openDown) {
-                let width = this.rng.pick([2, 2, 3, 3, 3, 4, 5, 7]);
-                let pos = this.rng.int(0, 7 - width);
+                let width =  Root.rng.pick([2, 2, 3, 3, 3, 4, 5, 7]);
+                let pos = Root.rng.int(0, 7 - width);
                 for(let x = room.left + pos; x < room.left + pos + width; x++) {
                     for(let y = room.bottom + 1; y < room.bottom + 3; y++) {
                         fieldMap.put(x, y, FIELD_TEMPLATES.FLOOR.id);
@@ -159,8 +158,8 @@ class FieldTypeMapBuilder {
                 }
             }
             if(room.openRight) {
-                let width = this.rng.pick([2, 2, 3, 3, 3, 4, 5, 7]);
-                let pos = this.rng.int(0, 7 - width);
+                let width = Root.rng.pick([2, 2, 3, 3, 3, 4, 5, 7]);
+                let pos = Root.rng.int(0, 7 - width);
                 for(let x = room.right + 1; x < room.right + 3; x++) {
                     for(let y = room.top + pos; y < room.top + pos + width; y++) {
                         fieldMap.put(x, y, FIELD_TEMPLATES.FLOOR.id);

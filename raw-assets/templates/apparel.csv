@@ -1,0 +1,11 @@
+key,name,spriteset,frame,type,value,might,agility,health,senses,luck,defence,rarity
+
+WD_RD_SLD,Wooden round shield,shields,0,OFF_HAND,10,0,0,0,0,0,2,COMMON
+WD_TW_SLD,Wooden tower shield,shields,10,OFF_HAND,15,0,-2,0,0,0,3,COMMON
+ST_KT_SLD,Steel kite shield,shields,20,OFF_HAND,30,0,0,0,0,0,3,UNCOMMON
+
+LN_SRT,Linnen shirt,armors,0,CHEST,10,0,0,0,0,0,2,COMMON
+RN_LN_SRT,Ruined linnen shirt,armors,0,CHEST,1,0,0,0,0,0,1,COMMON
+LT_SRT,Leather armor,armors,0,CHEST,20,0,-1,0,0,0,3,COMMON
+RN_LT_SRT,Ruined leather armor,armors,0,CHEST,10,0,-1,0,0,0,2,COMMON
+

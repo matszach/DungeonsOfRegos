@@ -1,17 +1,16 @@
 class LevelFactory {
 
     constructor() {
-        this.rng = new Rng();
-        this.ftmBuilder = new FieldTypeMapBuilder(this.rng);
-        this.roomBuilder = new RoomBuilder(this.rng);
-        this.itemFactory = new ItemFactory(this.rng);
-        this.monsterFactory = new MonsterFactory(this.rng);
-        this.fieldFactory = new FieldFactory(this.rng);
+        this.ftmBuilder = new FieldTypeMapBuilder();
+        this.roomBuilder = new RoomBuilder();
+        this.itemFactory = new ItemFactory();
+        this.monsterFactory = new MonsterFactory();
+        this.fieldFactory = new FieldFactory();
         this.level = null;
     }
 
     seed(seed) {
-        this.rng.seed(seed);
+        Root.rng = new Rng(seed);
         return this;
     }
 
@@ -42,7 +41,11 @@ class LevelFactory {
     }
 
     _createItems(nodes) {
-
+        const itf = this.itemFactory;
+        const level = this.level;
+        nodes.filter(n => [NODE.ITEM_WEAK, NODE.ITEM_STRONG].includes(n.type)).forEach(n => {
+            level.fields.get(n.x, n.y).item = itf.create(n);
+        });
     }
 
     _createInteractables(nodes) {

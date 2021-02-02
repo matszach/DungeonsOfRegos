@@ -1,4 +1,4 @@
-const SLOT = {
+const TYPE = {
 	MAIN_HAND: 0,
 	OFF_HAND: 1,
 	HEAD: 2,
@@ -6,4 +6,7 @@ const SLOT = {
 	FEET: 4,
 	NECK: 5,
 	FINGER: 6,
+	CONSUMABLE: 7,
+	VALUABLE: 8,
+	MONEY: 9,
 };
