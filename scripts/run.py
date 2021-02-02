@@ -1,7 +1,7 @@
 import http.server
 import os
 
-os.system('start chrome http://localhost:3333/src')
+os.system('start msedge http://localhost:3333/src')
 
 class MyHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
 
