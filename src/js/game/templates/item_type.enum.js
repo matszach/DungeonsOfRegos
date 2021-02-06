@@ -1,4 +1,4 @@
-const TYPE = {
+const ITEM_TYPE = {
 	MAIN_HAND: 0,
 	OFF_HAND: 1,
 	HEAD: 2,

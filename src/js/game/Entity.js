@@ -8,6 +8,12 @@ class Entity {
         this.sprite;
     }
 
+    placeAt(x, y) {
+        this.x = x;
+        this.y = y;
+        return this;
+    }
+
     moveTo(x, y) {
         this.x = x;
         this.y = y;
@@ -28,7 +34,7 @@ class Entity {
         this.sprite = scene.add.sprite(0, 0, this.spriteset);
         container.add(this.sprite);
         this.sprite.setFrame(this.frame);
-        this.moveTo(x, y);
+        this.moveTo(x || this.x, y || this.y);
         return this;
     }
 

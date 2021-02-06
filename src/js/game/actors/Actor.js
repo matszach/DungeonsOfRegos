@@ -9,6 +9,7 @@ class Actor extends Entity {
     }
 
     attack(targetActor) {
+        // CHANCE TO HIT HERE todo
         const wpn = this.inv.equipped[SLOT.MAIN_HAND];
         const might = this.attr.might();
         let effAtk;
@@ -29,27 +30,29 @@ class Actor extends Entity {
         return totalDamage;
     }
 
-    canActorMoveTo(x, y, level) {
+    actorCanMoveTo(x, y, level) {
         const has = level.fields.has(x, y);
         if(!has) {  // out of bounds
             return false;
         }
         const field = level.fields.get(x, y);
         return (
-            !field.blocksMove && // is wall ?
-            field.agent === null && // no agent there ?
+            !field.field.blocksMove && // is wall ?
+            field.actor === null && // no actor there ?
             field.interactable === null // no interactable there ?
         );
     }   
-
+    
     actorMoveTo(x, y, level) {
-        level.fields.get(this.x, this.y).actor === null;
+        const current = level.fields.get(this.x, this.y);
+        const target = level.fields.get(x, y);
+        current.actor = null;
         this.moveTo(x, y);
-        level.fields.get(x, y).actor = this;
+        target.actor = this;
     }
 
     actorCanMoveBy(x, y, level) {
-        return this.canActorMoveTo(this.x + x, this.y + y, level);
+        return this.actorCanMoveTo(this.x + x, this.y + y, level);
     }
 
     actorMoveBy(x, y, level) {

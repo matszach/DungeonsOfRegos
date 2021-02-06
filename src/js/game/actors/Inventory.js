@@ -1,7 +1,7 @@
 class Inventory {
 
     constructor() {
-        this.equipped = new Array(SLOT.keys().length);
+        this.equipped = new Array(Object.keys(ITEM_TYPE).length);
         this.backpack = new Array(30);
     }
     

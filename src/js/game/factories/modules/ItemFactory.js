@@ -74,7 +74,7 @@ class ItemFactory {
         }
 
         // TEMP
-        template = WEAPON_TEMPLATES.WD_BS;
+        template = Root.rng.pick(ItemFactory.ALL_ITEMS);
 
         return this._toItem(template);
     }
@@ -85,6 +85,7 @@ class ItemFactory {
             item = this.pick(
                 [10, 5, 2, 1, 0],
                 [1, 1, 1, 1, 1, 1, 2, 2, 2]
+
             );
         } else if(node.type === NODE.ITEM_STRONG) {
             item = this.pick(

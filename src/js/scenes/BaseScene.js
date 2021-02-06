@@ -3,7 +3,7 @@ class BaseScene extends Phaser.Scene {
     constructor(key) {
         super({key: key});
         this.timer = new SceneTimer();
-        this.downKeys = {};
+        this.keys = {};
         this.viewWidth = -1;
         this.viewHeight = -1;
         window.onresize = () => {this.refit()};
@@ -81,19 +81,18 @@ class BaseScene extends Phaser.Scene {
         return key;
     }
 
-    registerDownKey(code) {
-        const key = this._toKey(code);
-        this.downKeys[code] = key;
-    }
-
-    registerDownKeys(codes) {
-        (codes || []).forEach(code => this.registerDownKey(code), this);
-    }
-
-    handleDownKeys(...info) {
-        (info || []).forEach(datum => {
-            if(this.downKeys[datum[0]]?.isDown) {
-                datum[1](this);
+    registerKeys(...keyInfo) {
+        Object.keys(this.keys).forEach(k => {
+            this.keys[k].onDown = () => {};
+            this.keys[k].onUp = () => {};
+        }, this);
+        keyInfo.forEach(k => {
+            const key = this.getKey(k[0]);
+            this.keys[k[0]] = key;
+            if (k[1] === 'down') {
+                key.onDown = () => k[2](this);
+            } else if (k[1] === 'up') {
+                key.onUp = () => k[2](this);
             }
         }, this);
     }

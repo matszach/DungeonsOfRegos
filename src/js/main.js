@@ -15,6 +15,7 @@ const Game = new Phaser.Game({
 });
 
 const Root = {
+    player: null,
     level: null,
     rng: new Rng()
 };

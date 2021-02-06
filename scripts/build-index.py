@@ -25,13 +25,14 @@ dirs(['game/templates/', 'game/const/'])
 dirs(['lib/', 'util/', 'tools/'])
 many(['scenes/SceneTimer.js', 'scenes/BaseSceneComponent.js', 'scenes/BaseScene.js', 'scenes/MenuScene.js'])
 dirs(['scenes/final-components/', 'scenes/final-scenes/'])
-many(['game/Entity.js', 'game/actors/ActorAttributes.js', 'game/actors/Actor.js'])
+many(['game/Entity.js', 'game/actors/ActorAttributes.js', 'game/actors/Inventory.js', 
+    'game/actors/Actor.js', 'game/actors/Player.js'])
 many(['game/fields/Field.js'])
 dirs(['game/fields/final-fields/'])
 many(['game/items/Item.js', 'game/items/Equippable.js', 'game/items/Weapon.js', 
     'game/items/Valuable.js', 'game/items/Money.js','game/items/ItemEntity.js'])
 dirs(['game/factories/modules/'])
-many(['game/factories/LevelFactory.js'])
+many(['game/factories/LevelFactory.js', 'game/factories/PlayerFactory.js'])
 one('game/level/Level.js')
 INDEX['value'] += '\t</head>\n\t<body>\n'
 one('main.js')

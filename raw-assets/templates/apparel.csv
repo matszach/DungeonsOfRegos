@@ -5,7 +5,23 @@ WD_TW_SLD,Wooden tower shield,shields,10,OFF_HAND,15,0,-2,0,0,0,3,COMMON
 ST_KT_SLD,Steel kite shield,shields,20,OFF_HAND,30,0,0,0,0,0,3,UNCOMMON
 
 LN_SRT,Linnen shirt,armors,0,CHEST,10,0,0,0,0,0,2,COMMON
-RN_LN_SRT,Ruined linnen shirt,armors,0,CHEST,1,0,0,0,0,0,1,COMMON
-LT_SRT,Leather armor,armors,0,CHEST,20,0,-1,0,0,0,3,COMMON
-RN_LT_SRT,Ruined leather armor,armors,0,CHEST,10,0,-1,0,0,0,2,COMMON
+RN_LN_SRT,Ruined linnen shirt,armors,1,CHEST,1,0,0,0,0,0,1,COMMON
+LT_SRT,Leather armor,armors,10,CHEST,20,0,-1,0,0,0,3,COMMON
+RN_LT_SRT,Ruined leather armor,armors,11,CHEST,10,0,-1,0,0,0,2,COMMON
+
+LT_BTS,Leather boots,boots,0,FEET,5,0,0,0,0,0,1,COMMON
+
+PD_HT,Padded helmet,helmets,0,HEAD,5,0,0,0,0,0,1,COMMON
+
+S_RNG,Silver ring,rings,10,FINGER,25,0,0,0,0,0,0,COMMON
+G_RNG,Golden ring,rings,0,FINGER,50,0,0,0,0,0,0,UNCOMMON
+S_RNG_M,Silver ring of might,rings,11,FINGER,50,5,0,0,0,0,0,UNCOMMON
+G_RNG_M,Golden ring of might,rings,1,FINGER,100,10,0,0,0,0,0,RARE
+S_RNG_A,Silver ring of agility,rings,12,FINGER,50,0,5,0,0,0,0,UNCOMMON
+G_RNG_A,Golden ring of agility,rings,2,FINGER,100,0,10,0,0,0,0,RARE
+
+CH_NCK_M,Chain necklace of might,necklaces,0,NECK,50,5,0,0,0,0,0,UNCOMMON
+CH_NCK_A,Chain necklace of agility,necklaces,2,NECK,50,5,0,0,0,0,0,UNCOMMON
+
+
 

@@ -1,15 +1,16 @@
 class LevelHolder extends BaseSceneComponent {
 
-    static make(scene, level) {
-        const lh = new LevelHolder(scene, level);
+    static make(scene, level, player) {
+        const lh = new LevelHolder(scene, level, player);
         this.align(scene, lh.outerContainer, {leftPerc: 0.5, topPerc: 0.5});
         return lh;
     }
 
-    constructor(scene, level) {
+    constructor(scene, level, player) {
         super();
         this.scene = scene;
         this.level = level;
+        this.player = player;
         this.outerContainer = this.scene.add.container(0, 0);
         this.innerContainer = this.scene.add.container(0, 0);
         this.outerContainer.add(this.innerContainer);
@@ -22,6 +23,7 @@ class LevelHolder extends BaseSceneComponent {
         }).iter((v, x, y) => {
             v.actor?.create(this.scene, this.innerContainer, x, y);
         });
+        player.create(this.scene, this.innerContainer);
         return this;
     }
 

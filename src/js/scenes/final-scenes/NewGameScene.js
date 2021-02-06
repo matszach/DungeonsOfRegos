@@ -22,7 +22,9 @@ class NewGameScene extends MenuScene {
     startNewGame(characterKey) {
         const view = this;
         const levelFactory = new LevelFactory();
-        levelFactory.asyncCreate(1, 1, null, level => {
+        const playerFactory = new PlayerFactory();
+        Root.player = playerFactory.create(characterKey);
+        levelFactory.asyncCreate(0, 0, Root.player, level => {
             Root.level = level;
             view.toScene('GameScene')
         });

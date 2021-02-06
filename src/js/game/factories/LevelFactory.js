@@ -57,7 +57,8 @@ class LevelFactory {
     }
 
     _placePlayer(nodes, player) {
-
+        const node = nodes.filter(n => n.type === NODE.PLAYER)[0];
+        player.placeAt(node.x, node.y);
     }
 
     // TEST
