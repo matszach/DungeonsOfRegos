@@ -3,8 +3,8 @@ class Actor extends Entity {
     constructor(template) {
         super(template.spriteset, template.frame);
         this._template = template;
-        this.attr = new ActorAttributes(template);
-        this.inv = new Inventory();
+        this.attr = new ActorAttributes(this, template);
+        this.inv = new Inventory(this);
         this.expired = false;
     }
 

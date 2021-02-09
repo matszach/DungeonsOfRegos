@@ -19,4 +19,8 @@ class Level {
         return this;
     }
 
+    get(x, y) {
+        return this.fields.safeGet(x, y);
+    }
+
 }

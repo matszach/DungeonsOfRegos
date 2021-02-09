@@ -18,9 +18,9 @@ class FieldTypeMapBuilder {
     }
 
     _initLayout(diff, depth, player) {
-        const size = (5 + diff + depth);
-        const lx = Root.rng.int(0.4 * size, 0.6 * size);
-        const ly = Root.rng.int(0.4 * size, 0.6 * size);
+        const size = (3 + diff + depth);
+        const lx = Root.rng.int(0.8 * size, 1.2 * size);
+        const ly = Root.rng.int(0.8 * size, 1.2 * size);
         const layout = new Table2D(lx, ly);
         layout.assign((x, y) => {
             return {

@@ -24,7 +24,6 @@ class LevelHolder extends BaseSceneComponent {
             v.actor?.create(this.scene, this.innerContainer, x, y);
         });
         player.create(this.scene, this.innerContainer);
-        return this;
     }
 
     destroy() {

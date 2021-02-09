@@ -11,7 +11,8 @@ class ActorAttributes {
         };
     } 
 
-    constructor(template) {
+    constructor(player, template) {
+        this.player = player;
         this.base = ActorAttributes._extract(template);
         this.extra = ActorAttributes._extract({});
         this.damageTaken = 0;
