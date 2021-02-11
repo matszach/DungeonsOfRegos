@@ -58,23 +58,68 @@ class ActorAttributes {
         return this.base.defence + this.extra.defence;
     }
 
+    crit() {
+        return (this.player.inv.equipped.mainHand?.critChance || 1) + this.luck()/10;
+    }
+
+    minDmg() {
+        return (this.player.inv.equipped.mainHand?.minDamage || 1) + this.might()/10;
+    }
+
+    maxDmg() {
+        return (this.player.inv.equipped.mainHand?.maxDamage || 3) + this.might()/5;
+    }
+
+    penetration() {
+        return this.player.inv.equipped.mainHand?.penetration || 0;
+    }
+
+    dodge() {
+        return this.agility()/5;
+    }
+
     // Modifiers
     addModifiers(mods) {
-        this.extra.might += mods.might || 0;
-        this.extra.agility += mods.agility || 0;
+        this.extra.might += parseFloat(mods.might) || 0;
+        this.extra.agility += parseFloat(mods.agility) || 0;
         const oh = this.health();
-        this.extra.health += mods.health || 0;
+        this.extra.health += parseFloat(mods.health) || 0;
         const nh = this.health();
         this.damageTaken = this.damageTaken * nh/oh;
-        this.extra.senses += mods.senses || 0;
-        this.extra.luck += mods.luck || 0;
-        this.extra.defence += mods.defence || 0;
+        this.extra.senses += parseFloat(mods.senses) || 0;
+        this.extra.luck += parseFloat(mods.luck) || 0;
+        this.extra.defence += parseFloat(mods.defence) || 0;
         return this;
     }
 
     removeModifiers(mods) {
-        Object.keys(mods).forEach(key => mods[key] = - mods[key]);
-        return this.addModifiers(mods);
+        this.extra.might -= parseFloat(mods.might) || 0;
+        this.extra.agility -= parseFloat(mods.agility) || 0;
+        const oh = this.health();
+        this.extra.health -= parseFloat(mods.health) || 0;
+        const nh = this.health();
+        this.damageTaken = this.damageTaken * nh/oh;
+        this.extra.senses -= parseFloat(mods.senses) || 0;
+        this.extra.luck -= parseFloat(mods.luck) || 0;
+        this.extra.defence -= parseFloat(mods.defence) || 0;
+        return this;
+    }
+    
+    healthToString() {
+        const h = this.health();
+        return `${Math.round(h - this.damageTaken)}/${h}`;
+    }
+
+    critToString() {
+        return `${Math.round(this.crit(), 2)}%`; 
+    }
+
+    damageRangeToString() {
+        return `${this.minDmg()} - ${this.maxDmg()}`;
+    }
+
+    dodgeToString() {
+        return `${Math.round(this.dodge(), 2)}%`; 
     }
 
 }

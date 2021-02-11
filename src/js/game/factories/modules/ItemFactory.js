@@ -56,7 +56,7 @@ class ItemFactory {
         switch (template.type) {
             case 'MONEY': return new Money(template);
             case 'VALUABLE': return new Valuable(template);
-            case 'WEAPON': return new Weapon(template);
+            case 'MAIN_HAND': return new Weapon(template);
             case 'CONSUMABLE': return new Consumable(template);
             default: return new Equippable(template);
         }

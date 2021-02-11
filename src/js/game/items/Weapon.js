@@ -8,12 +8,4 @@ class Weapon extends Equippable {
         this.penetration = template.penetration;
     }
 
-    damageRoll() {
-        const damage = Root.rng.float(this.minDamage, this.maxDamage);
-        if(Root.rng.chance(this.critChance/100)) {
-            damage *= 2;
-        }
-        return damage;
-    }
-
 }

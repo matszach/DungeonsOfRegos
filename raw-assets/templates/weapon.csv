@@ -4,6 +4,6 @@ WD_BS,Wooden broadsword,weapons,0,MAIN_HAND,10,0,0,0,0,0,0,5,10,10,0,COMMON
 WD_LS,Wooden longsword,weapons,10,MAIN_HAND,10,0,0,0,0,0,0,4,9,15,0,COMMON
 WD_AX,Wooden axe,weapons,20,MAIN_HAND,10,0,0,0,0,0,0,4,9,5,2,COMMON
 WD_MC,Wooden mace,weapons,30,MAIN_HAND,10,0,0,0,0,0,0,3,8,5,3,COMMON
-WD_HM,Wooden hammer,weapons,40,MAIN_HAND,10,0,0,0,0,0,0,3,8,0,4,COMMON
+WD_HM,Wooden hammer,weapons,40,MAIN_HAND,10,0,0,0,0,0,0,3,8,2,4,COMMON
 
 

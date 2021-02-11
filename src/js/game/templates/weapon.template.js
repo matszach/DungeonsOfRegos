@@ -90,7 +90,7 @@ const WEAPON_TEMPLATES = {
 		defence: 0,
 		minDamage: 3.0,
 		maxDamage: 8.0,
-		critChance: 0,
+		critChance: 2.0,
 		penetration: 4.0,
 		rarity: 'COMMON',
 	},

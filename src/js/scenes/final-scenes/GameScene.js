@@ -8,7 +8,7 @@ class GameScene extends BaseScene {
         this.loadSprites(
             'armors', 'boots', 'floors', 'helmets', 'necklaces', 
             'players', 'potions', 'rings', 'shields', 'stairs', 
-            'walls', 'weapons', 'valuables'
+            'walls', 'weapons', 'valuables', 'action_buttons'
         );
         this.loadImages(
             'player_silhouette'
@@ -18,6 +18,7 @@ class GameScene extends BaseScene {
     onCreate() {
         this.level = Root.level;
         this.levelHolder = LevelHolder.make(this, Root.level, Root.player);  
+        this.actionButtonGui = ActionButtonsGui.make(this);
         this.centerOnPlayer();  
         this.setPlayerInControlControls();
     }
@@ -38,6 +39,7 @@ class GameScene extends BaseScene {
             }
         }
         this.centerOnPlayer();
+        this.actionButtonGui.update();
     }
 
     setPlayerInControlControls() {
@@ -46,23 +48,23 @@ class GameScene extends BaseScene {
             ['A', 'up', scene => scene.performPlayerActionInDirection(-1, 0)],
             ['S', 'up', scene => scene.performPlayerActionInDirection(0, 1)],
             ['D', 'up', scene => scene.performPlayerActionInDirection(1, 0)],
-            ['I', 'up', scene => scene.toogleInventory()],
+            ['C', 'up', scene => scene.toggleCharacterSheet()],
         );
     }
 
     setInventoryOpenControls() {
         this.registerKeys(
-            ['I', 'up', scene => scene.toogleInventory()],
+            ['C', 'up', scene => scene.toggleCharacterSheet()],
         );
     }
 
-    toogleInventory() {
-        if(!!this.inventoryGui) {
-            this.inventoryGui.destroy();
-            this.inventoryGui = null;
+    toggleCharacterSheet() {
+        if(!!this.characterSheet) {
+            this.characterSheet.destroy();
+            this.characterSheet = null;
             this.setPlayerInControlControls();
         } else {
-            this.inventoryGui = InventoryGui.make(this, Root.player);
+            this.characterSheet = CharacterSheetGui.make(this, Root.player);
             this.setInventoryOpenControls();
         }
     }   

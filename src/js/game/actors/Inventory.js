@@ -89,13 +89,14 @@ class Inventory {
 
     equip(item) {
         const key = Inventory.toKey(item.type);
-        console.log(key, item);
         if(!!key) {
-            if(!!this.equipped[key]) {
+            const equipped = this.equipped[key];
+            if(!!equipped) {
                 if(this.isBackpackFull()) {
                     return false;
                 } else {
-                    this.putInBackpack(this.equipped[key]);
+                    this.putInBackpack(equipped);
+                    this.player.attr.removeModifiers(equipped.modifiers);
                 }
             }
             this.equipped[key] = item;
