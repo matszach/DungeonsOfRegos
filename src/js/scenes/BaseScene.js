@@ -87,13 +87,16 @@ class BaseScene extends Phaser.Scene {
             this.keys[k].onUp = () => {};
         }, this);
         keyInfo.forEach(k => {
-            const key = this.getKey(k[0]);
-            this.keys[k[0]] = key;
-            if (k[1] === 'down') {
-                key.onDown = () => k[2](this);
-            } else if (k[1] === 'up') {
-                key.onUp = () => k[2](this);
-            }
+            const codes = Array.isArray(k[0]) ? k[0] : [k[0]];
+            codes.forEach(code => {
+                const key = this.getKey(code);
+                this.keys[code] = key;
+                if (k[1] === 'down') {
+                    key.onDown = () => k[2](this);
+                } else if (k[1] === 'up') {
+                    key.onUp = () => k[2](this);
+                }
+            }, this);            
         }, this);
     }
 

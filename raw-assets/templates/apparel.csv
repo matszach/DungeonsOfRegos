@@ -9,6 +9,9 @@ RN_LN_SRT,Ruined linnen shirt,armors,1,CHEST,1,0,0,0,0,0,1,COMMON
 LT_SRT,Leather armor,armors,10,CHEST,20,0,-1,0,0,0,3,COMMON
 RN_LT_SRT,Ruined leather armor,armors,11,CHEST,10,0,-1,0,0,0,2,COMMON
 
+LN_PTS,Linnen pants,pants,0,LEGS,10,0,0,0,0,0,2,COMMON
+LN_PTS,Ruined linnen shirt,pants,1,LEGS,1,0,0,0,0,0,1,COMMON
+
 LT_BTS,Leather boots,boots,0,FEET,5,0,0,0,0,0,1,COMMON
 
 PD_HT,Padded helmet,helmets,0,HEAD,5,0,0,0,0,0,1,COMMON

@@ -24,7 +24,23 @@ class GameViewTopButtons extends BaseSceneComponent {
         });
         this.container.add(characterSheetButton);
         const optionsButton = this.scene.add.sprite(-32, 32, 'buttons').setAlpha(0.5).setFrame(7).setScale(0.9);
+        optionsButton.setInteractive().on('pointerover', () => {
+            optionsButton.setAlpha(0.7);
+            MenuButton.cursor('pointer');
+        }).on('pointerout', () => {
+            optionsButton.setAlpha(0.5);
+            MenuButton.cursor('default');
+        }).on('pointerdown', () => {
+            optionsButton.setAlpha(0.8);
+        }).on('pointerup', () => {
+            scene.togglePauseMenu();
+        });
         this.container.add(optionsButton);
+    }
+
+    destroy() {
+        this.container.destroy();
+        return this;
     }
 
 }

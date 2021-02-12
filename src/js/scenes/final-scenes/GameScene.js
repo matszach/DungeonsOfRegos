@@ -8,7 +8,7 @@ class GameScene extends BaseScene {
         this.loadSprites(
             'armors', 'boots', 'floors', 'helmets', 'necklaces', 
             'players', 'potions', 'rings', 'shields', 'stairs', 
-            'walls', 'weapons', 'valuables', 'buttons'
+            'walls', 'weapons', 'valuables', 'buttons', 'pants'
         );
         this.loadImages(
             'player_silhouette'
@@ -49,17 +49,24 @@ class GameScene extends BaseScene {
 
     setPlayerInControlControls() {
         this.registerKeys(
-            ['W', 'up', scene => scene.performPlayerActionInDirection(0, -1)],
-            ['A', 'up', scene => scene.performPlayerActionInDirection(-1, 0)],
-            ['S', 'up', scene => scene.performPlayerActionInDirection(0, 1)],
-            ['D', 'up', scene => scene.performPlayerActionInDirection(1, 0)],
+            [['W', 'UP'], 'up', scene => scene.performPlayerActionInDirection(0, -1)],
+            [['A', 'LEFT'], 'up', scene => scene.performPlayerActionInDirection(-1, 0)],
+            [['S', 'DOWN'], 'up', scene => scene.performPlayerActionInDirection(0, 1)],
+            [['D', 'RIGHT'], 'up', scene => scene.performPlayerActionInDirection(1, 0)],
             ['C', 'up', scene => scene.toggleCharacterSheet()],
+            ['P', 'up', scene => scene.togglePauseMenu()],
         );
     }
 
     setInventoryOpenControls() {
         this.registerKeys(
             ['C', 'up', scene => scene.toggleCharacterSheet()],
+        );
+    }
+
+    setPauseMenuControls() {
+        this.registerKeys(
+            ['P', 'up', scene => scene.togglePauseMenu()],
         );
     }
 
@@ -72,8 +79,29 @@ class GameScene extends BaseScene {
         } else {
             this.characterSheet = CharacterSheetGui.make(this, Root.player);
             this.paused = true;
+            if(!!this.pauseMenu) {
+                this.pauseMenu.destroy();
+                this.pauseMenu = null;
+            }
             this.setInventoryOpenControls();
         }
     }   
+
+    togglePauseMenu() {
+        if(!!this.pauseMenu) {
+            this.pauseMenu.destroy();
+            this.pauseMenu = null;
+            this.paused = false;
+            this.setPlayerInControlControls();
+        } else {
+            this.pauseMenu = PauseMenuGui.make(this);
+            this.paused = true;
+            if(!!this.characterSheet) {
+                this.characterSheet.destroy();
+                this.characterSheet = null;
+            }
+            this.setPauseMenuControls();
+        }
+    }  
     
 }

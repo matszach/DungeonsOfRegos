@@ -17,12 +17,13 @@ class ItemFactory {
         );
     }
 
-    _calcType(mainHand, offHand, head, chest, feet, neck, finger, consumable, valuable, money) {
+    _calcType(mainHand, offHand, head, chest, legs, feet, neck, finger, consumable, valuable, money) {
         return Root.rng.weightedPick(
             ['MAIN_HAND', mainHand],
             ['OFF_HAND', offHand],
             ['HEAD', head],
             ['CHEST', chest],
+            ['LEGS', legs],
             ['FEET', feet],
             ['NECK', neck],
             ['FINGER', finger],
@@ -85,13 +86,13 @@ class ItemFactory {
         if(node.type === NODE.ITEM_WEAK) {
             item = this.pick(
                 [10, 5, 2, 1, 0],
-                [1, 1, 1, 1, 1, 1, 2, 2, 2]
+                [1, 1, 1, 1, 1, 1, 1, 2, 2, 2]
 
             );
         } else if(node.type === NODE.ITEM_STRONG) {
             item = this.pick(
                 [5, 15, 10, 5, 1],
-                [2, 2, 2, 2, 2, 2, 1, 2, 1]
+                [2, 2, 2, 2, 2, 2, 2, 1, 2, 1]
             );
         } 
         return new ItemEntity(item);

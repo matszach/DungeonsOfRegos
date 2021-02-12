@@ -24,4 +24,5 @@ class OptionsScene extends MenuScene {
     toggleSound() {
         // TODO
     }
+
 }
