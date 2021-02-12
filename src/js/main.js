@@ -1,4 +1,5 @@
 
+// game init and reference
 const Game = new Phaser.Game({
     type: Phaser.AUTO,
     autoCenter: Phaser.Scale.CENTER_BOTH,
@@ -14,8 +15,12 @@ const Game = new Phaser.Game({
     ]
 });
 
+// global data accessor
 const Root = {
     player: null,
     level: null,
     rng: new Rng()
 };
+
+// disable context menu
+document.addEventListener('contextmenu', event => event.preventDefault());
