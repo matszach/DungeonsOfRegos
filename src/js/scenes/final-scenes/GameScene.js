@@ -8,7 +8,7 @@ class GameScene extends BaseScene {
         this.loadSprites(
             'armors', 'boots', 'floors', 'helmets', 'necklaces', 
             'players', 'potions', 'rings', 'shields', 'stairs', 
-            'walls', 'weapons', 'valuables', 'action_buttons'
+            'walls', 'weapons', 'valuables', 'buttons'
         );
         this.loadImages(
             'player_silhouette'
@@ -16,9 +16,11 @@ class GameScene extends BaseScene {
     }
 
     onCreate() {
+        this.paused = false;
         this.level = Root.level;
         this.levelHolder = LevelHolder.make(this, Root.level, Root.player);  
         this.actionButtonGui = ActionButtonsGui.make(this);
+        this.topButtons = GameViewTopButtons.make(this);
         this.centerOnPlayer();  
         this.setPlayerInControlControls();
     }
@@ -28,6 +30,9 @@ class GameScene extends BaseScene {
     }
 
     performPlayerActionInDirection(x, y) {
+        if(this.paused) {
+            return;
+        }
         x += Root.player.x; 
         y += Root.player.y;
         const field = Root.level.get(x, y);
@@ -62,9 +67,11 @@ class GameScene extends BaseScene {
         if(!!this.characterSheet) {
             this.characterSheet.destroy();
             this.characterSheet = null;
+            this.paused = false;
             this.setPlayerInControlControls();
         } else {
             this.characterSheet = CharacterSheetGui.make(this, Root.player);
+            this.paused = true;
             this.setInventoryOpenControls();
         }
     }   

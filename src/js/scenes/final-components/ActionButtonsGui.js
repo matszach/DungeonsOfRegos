@@ -11,7 +11,7 @@ class ActionButtonsGui extends BaseSceneComponent {
         this.scene = scene;
         this.container = scene.add.container(0, 0);
         // up
-        this.up = this.scene.add.sprite(0, -64, 'action_buttons').setAlpha(0.15).setInteractive().setScale(0.8, 0.8);
+        this.up = this.scene.add.sprite(0, -64, 'buttons').setAlpha(0.15).setInteractive().setScale(0.8, 0.8);
         const up = this.up;
         this.container.add(up);
         up.on('pointerover', event => {
@@ -27,7 +27,7 @@ class ActionButtonsGui extends BaseSceneComponent {
             scene.performPlayerActionInDirection(0, -1);
         });
         // right
-        this.right = this.scene.add.sprite(64, 0, 'action_buttons').setAlpha(0.15).setInteractive().setScale(0.8, 0.8);
+        this.right = this.scene.add.sprite(64, 0, 'buttons').setAlpha(0.15).setInteractive().setScale(0.8, 0.8);
         const right = this.right;
         this.container.add(right);
         right.on('pointerover', event => {
@@ -43,7 +43,7 @@ class ActionButtonsGui extends BaseSceneComponent {
             scene.performPlayerActionInDirection(1, 0);
         });
         // down
-        this.down = this.scene.add.sprite(0, 64, 'action_buttons').setAlpha(0.15).setInteractive().setScale(0.8, 0.8);
+        this.down = this.scene.add.sprite(0, 64, 'buttons').setAlpha(0.15).setInteractive().setScale(0.8, 0.8);
         const down = this.down;
         this.container.add(down);
         down.on('pointerover', event => {
@@ -59,7 +59,7 @@ class ActionButtonsGui extends BaseSceneComponent {
             scene.performPlayerActionInDirection(0, 1);
         });
         // left
-        this.left = this.scene.add.sprite(-64, 0, 'action_buttons').setAlpha(0.15).setInteractive().setScale(0.8, 0.8);
+        this.left = this.scene.add.sprite(-64, 0, 'buttons').setAlpha(0.15).setInteractive().setScale(0.8, 0.8);
         const left = this.left;
         this.container.add(left);
         left.on('pointerover', event => {
