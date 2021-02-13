@@ -10,7 +10,8 @@ class GameViewTopButtons extends BaseSceneComponent {
         super();
         this.scene = scene;
         this.container = this.scene.add.container(0, 0);
-        const characterSheetButton = this.scene.add.sprite(-96, 32, 'buttons').setAlpha(0.5).setFrame(6).setScale(0.9);
+        // character button
+        const characterSheetButton = this.scene.add.sprite(-96, 32, 'top_buttons').setAlpha(0.5).setFrame(2).setScale(0.9);
         characterSheetButton.setInteractive().on('pointerover', () => {
             characterSheetButton.setAlpha(0.7);
             MenuButton.cursor('pointer');
@@ -23,7 +24,8 @@ class GameViewTopButtons extends BaseSceneComponent {
             scene.toggleCharacterSheet();
         });
         this.container.add(characterSheetButton);
-        const optionsButton = this.scene.add.sprite(-32, 32, 'buttons').setAlpha(0.5).setFrame(7).setScale(0.9);
+        // options
+        const optionsButton = this.scene.add.sprite(-32, 32, 'top_buttons').setAlpha(0.5).setFrame(3).setScale(0.9);
         optionsButton.setInteractive().on('pointerover', () => {
             optionsButton.setAlpha(0.7);
             MenuButton.cursor('pointer');
@@ -36,6 +38,34 @@ class GameViewTopButtons extends BaseSceneComponent {
             scene.togglePauseMenu();
         });
         this.container.add(optionsButton);
+        // downscale
+        const downscaleButton = this.scene.add.sprite(-160, 32, 'top_buttons').setAlpha(0.5).setFrame(1).setScale(0.9);
+        downscaleButton.setInteractive().on('pointerover', () => {
+            downscaleButton.setAlpha(0.7);
+            MenuButton.cursor('pointer');
+        }).on('pointerout', () => {
+            downscaleButton.setAlpha(0.5);
+            MenuButton.cursor('default');
+        }).on('pointerdown', () => {
+            downscaleButton.setAlpha(0.8);
+        }).on('pointerup', () => {
+            scene.levelHolder.downscale();
+        });
+        this.container.add(downscaleButton);
+        // upscale
+        const upscaleButton = this.scene.add.sprite(-224, 32, 'top_buttons').setAlpha(0.5).setFrame(0).setScale(0.9);
+        upscaleButton.setInteractive().on('pointerover', () => {
+            upscaleButton.setAlpha(0.7);
+            MenuButton.cursor('pointer');
+        }).on('pointerout', () => {
+            upscaleButton.setAlpha(0.5);
+            MenuButton.cursor('default');
+        }).on('pointerup', () => {
+            upscaleButton.setAlpha(0.8);
+        }).on('pointerup', () => {
+            scene.levelHolder.upscale();
+        });
+        this.container.add(upscaleButton);
     }
 
     destroy() {

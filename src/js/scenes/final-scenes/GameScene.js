@@ -8,7 +8,8 @@ class GameScene extends BaseScene {
         this.loadSprites(
             'armors', 'boots', 'floors', 'helmets', 'necklaces', 
             'players', 'potions', 'rings', 'shields', 'stairs', 
-            'walls', 'weapons', 'valuables', 'buttons', 'pants'
+            'walls', 'weapons', 'valuables', 'pants', 'monsters',
+            'action_buttons', 'top_buttons',
         );
         this.loadImages(
             'player_silhouette'

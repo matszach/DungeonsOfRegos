@@ -11,6 +11,7 @@ class LevelHolder extends BaseSceneComponent {
         this.scene = scene;
         this.level = level;
         this.player = player;
+        this.scale = 1;
         this.outerContainer = this.scene.add.container(0, 0);
         this.innerContainer = this.scene.add.container(0, 0);
         this.outerContainer.add(this.innerContainer);
@@ -41,5 +42,19 @@ class LevelHolder extends BaseSceneComponent {
         this.innerContainer.x -= x * SIZES.SPRITE_SIZE;
         this.innerContainer.y -= y * SIZES.SPRITE_SIZE;
         return this;
+    }
+
+    upscale() {
+        if(this.scale < 3) {
+            this.scale *= 1.25;
+        }
+        this.outerContainer.setScale(this.scale, this.scale);
+    }
+
+    downscale() {
+        if(this.scale > 0.5) {
+            this.scale *= 0.8;
+        }
+        this.outerContainer.setScale(this.scale, this.scale);
     }
 }
