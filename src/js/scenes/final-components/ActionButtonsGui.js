@@ -9,7 +9,7 @@ class ActionButtonsGui extends BaseSceneComponent {
     constructor(scene) {
         super();
         this.scene = scene;
-        this.container = scene.add.container(0, 0);
+        this.container = scene.add.container(0, 0).setScale(1.5, 1.5);
         // up
         this.up = this.scene.add.sprite(0, -64, 'action_buttons').setAlpha(0.15).setInteractive().setScale(0.8, 0.8);
         const up = this.up;

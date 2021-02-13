@@ -25,10 +25,12 @@ class LevelHolder extends BaseSceneComponent {
             v.actor?.create(this.scene, this.innerContainer, x, y);
         });
         player.create(this.scene, this.innerContainer);
+        this.attachScrollListener();
     }
 
     destroy() {
         this.outerContainer.destroy();
+        window.removeEventListener('wheel'); // TODO might not work properly, no way to test yet
         return this;
     }
 
@@ -42,6 +44,16 @@ class LevelHolder extends BaseSceneComponent {
         this.innerContainer.x -= x * SIZES.SPRITE_SIZE;
         this.innerContainer.y -= y * SIZES.SPRITE_SIZE;
         return this;
+    }
+
+    attachScrollListener() {
+        window.addEventListener('wheel', event => {
+            if(event.wheelDelta > 0) {
+                this.upscale();
+            } else {
+                this.downscale();
+            }
+        });
     }
 
     upscale() {
