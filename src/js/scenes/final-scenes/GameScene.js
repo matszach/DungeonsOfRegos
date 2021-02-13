@@ -61,13 +61,13 @@ class GameScene extends BaseScene {
 
     setInventoryOpenControls() {
         this.registerKeys(
-            ['C', 'up', scene => scene.toggleCharacterSheet()],
+            [['C', 'ESC'], 'up', scene => scene.toggleCharacterSheet()],
         );
     }
 
     setPauseMenuControls() {
         this.registerKeys(
-            ['P', 'up', scene => scene.togglePauseMenu()],
+            [['P', 'ESC'], 'up', scene => scene.togglePauseMenu()],
         );
     }
 

@@ -9,7 +9,7 @@ class GameViewTopButtons extends BaseSceneComponent {
     constructor(scene) {
         super();
         this.scene = scene;
-        this.container = this.scene.add.container(0, 0);
+        this.container = this.scene.add.container(0, 0).setScale(1.5, 1.5);
         // character button
         const characterSheetButton = this.scene.add.sprite(-96, 32, 'top_buttons').setAlpha(0.5).setFrame(2).setScale(0.9);
         characterSheetButton.setInteractive().on('pointerover', () => {
