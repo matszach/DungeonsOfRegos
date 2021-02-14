@@ -16,6 +16,9 @@ class ActorAttributes {
         this.base = ActorAttributes._extract(template);
         this.extra = ActorAttributes._extract({});
         this.damageTaken = 0;
+        this._minDamage = template.minDamage || 1;
+        this._maxDamage = template.maxDamage || 3;
+        this._defence = template.defence || 0;
     }
 
     // Damage and healing
@@ -55,7 +58,7 @@ class ActorAttributes {
     }
 
     defence() {
-        return this.base.defence + this.extra.defence;
+        return this._defence + this.base.defence + this.extra.defence;
     }
 
     crit() {
@@ -63,11 +66,11 @@ class ActorAttributes {
     }
 
     minDmg() {
-        return (this.player.inv.equipped.mainHand?.minDamage || 1) + this.might()/10;
+        return (this.player.inv.equipped.mainHand?.minDamage || this._minDamage) + this.might()/10;
     }
 
     maxDmg() {
-        return (this.player.inv.equipped.mainHand?.maxDamage || 3) + this.might()/5;
+        return (this.player.inv.equipped.mainHand?.maxDamage || this._maxDamage) + this.might()/5;
     }
 
     penetration() {

@@ -12,6 +12,11 @@ class Level {
                 item: null
             };
         });
+
+        // reference holders
+        this.items = [];
+        this.monsters = [];
+        this.interactables = [];
     }
 
     iter(callback) {

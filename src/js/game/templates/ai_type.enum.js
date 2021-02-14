@@ -1,0 +1,5 @@
+const AI_TYPE = {
+	PASSIVE: 0,
+	SENTINEL: 1,
+	WANDERER: 2,
+};

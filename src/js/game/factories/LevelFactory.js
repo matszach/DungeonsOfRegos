@@ -53,7 +53,11 @@ class LevelFactory {
     }
 
     _createMonsters(nodes) {
-
+        const mf = this.monsterFactory;
+        const level = this.level;
+        nodes.filter(n => [NODE.MONSTER_WEAK, NODE.MONSTER_STRONG].includes(n.type)).forEach(n => {
+            level.fields.get(n.x, n.y).actor = mf.create(n);
+        });
     }
 
     _placePlayer(nodes, player) {
