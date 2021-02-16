@@ -20,6 +20,9 @@ class PauseMenuGui extends BaseSceneComponent {
         const background = this.scene.add.rectangle(0, 0, 400, 600, 0x000000).setOrigin(0.5, 0.5).setStrokeStyle(2, 0x999999).setAlpha(0.9);
         this.container.add(background);  
 
+        // exit button
+        const close = BaseSceneComponent.closeButton(175, -275, scene, () => scene.togglePauseMenu())
+        this.container.add(close);
     }
 
     destroy() {

@@ -9,7 +9,7 @@ class GameScene extends BaseScene {
             'armors', 'boots', 'floors', 'helmets', 'necklaces', 
             'players', 'potions', 'rings', 'shields', 'stairs', 
             'walls', 'weapons', 'valuables', 'pants', 'monsters',
-            'action_buttons', 'top_buttons',
+            'action_buttons', 'top_buttons', 'close_button'
         );
         this.loadImages(
             'player_silhouette'

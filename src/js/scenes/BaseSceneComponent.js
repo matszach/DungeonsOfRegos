@@ -23,4 +23,20 @@ class BaseSceneComponent {
         Game.canvas.style.cursor = type || 'default';
     }
 
+    static closeButton(x, y, scene, callback) {
+        const button = scene.add.sprite(x, y, 'close_button').setAlpha(0.5).setScale(0.5, 0.5);
+        button.setInteractive().on('pointerover', event => {
+            button.setAlpha(0.7);            
+            MenuButton.cursor('pointer');
+        }).on('pointerout', event => {
+            button.setAlpha(0.5);         
+            MenuButton.cursor('default');
+        }).on('pointerdown', event => {
+            button.setAlpha(0.9);
+        }).on('pointerup', event => {
+            callback();
+        });
+        return button;
+    }
+
 }

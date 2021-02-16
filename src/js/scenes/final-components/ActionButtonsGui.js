@@ -15,10 +15,10 @@ class ActionButtonsGui extends BaseSceneComponent {
         const up = this.up;
         this.container.add(up);
         up.on('pointerover', event => {
-            up.setAlpha(0.3);            
+            up.setAlpha(0.5);            
             MenuButton.cursor('pointer');
         }).on('pointerout', event => {
-            up.setAlpha(0.15);         
+            up.setAlpha(0.25);         
             MenuButton.cursor('default');
         }).on('pointerdown', event => {
             up.setAlpha(0.2);
@@ -31,10 +31,10 @@ class ActionButtonsGui extends BaseSceneComponent {
         const right = this.right;
         this.container.add(right);
         right.on('pointerover', event => {
-            right.setAlpha(0.3);            
+            right.setAlpha(0.5);            
             MenuButton.cursor('pointer');
         }).on('pointerout', event => {
-            right.setAlpha(0.15);         
+            right.setAlpha(0.25);         
             MenuButton.cursor('default');
         }).on('pointerdown', event => {
             right.setAlpha(0.2);
@@ -47,10 +47,10 @@ class ActionButtonsGui extends BaseSceneComponent {
         const down = this.down;
         this.container.add(down);
         down.on('pointerover', event => {
-            down.setAlpha(0.3);            
+            down.setAlpha(0.5);            
             MenuButton.cursor('pointer');
         }).on('pointerout', event => {
-            down.setAlpha(0.15);         
+            down.setAlpha(0.25);         
             MenuButton.cursor('default');
         }).on('pointerdown', event => {
             down.setAlpha(0.2);
@@ -63,10 +63,10 @@ class ActionButtonsGui extends BaseSceneComponent {
         const left = this.left;
         this.container.add(left);
         left.on('pointerover', event => {
-            left.setAlpha(0.3);            
+            left.setAlpha(0.5);            
             MenuButton.cursor('pointer');
         }).on('pointerout', event => {
-            left.setAlpha(0.15);         
+            left.setAlpha(0.25);         
             MenuButton.cursor('default');
         }).on('pointerdown', event => {
             left.setAlpha(0.2);
@@ -83,7 +83,7 @@ class ActionButtonsGui extends BaseSceneComponent {
         if(upState === ACTION_BUTTON_STATE.NONE) {
             this.up.setAlpha(0).disableInteractive();
         } else {
-            this.up.setAlpha(0.15).setInteractive();
+            this.up.setAlpha(0.25).setInteractive();
             if(upState === ACTION_BUTTON_STATE.WALK) {
                 this.up.setFrame(0);
             } else if(upState === ACTION_BUTTON_STATE.ATTACK) {
@@ -97,7 +97,7 @@ class ActionButtonsGui extends BaseSceneComponent {
         if(rightState === ACTION_BUTTON_STATE.NONE) {
             this.right.setAlpha(0).disableInteractive();
         } else {
-            this.right.setAlpha(0.15).setInteractive();
+            this.right.setAlpha(0.25).setInteractive();
             if(rightState === ACTION_BUTTON_STATE.WALK) {
                 this.right.setFrame(1);
             } else if(rightState === ACTION_BUTTON_STATE.ATTACK) {
@@ -111,7 +111,7 @@ class ActionButtonsGui extends BaseSceneComponent {
         if(downState === ACTION_BUTTON_STATE.NONE) {
             this.down.setAlpha(0).disableInteractive();
         } else {
-            this.down.setAlpha(0.15).setInteractive();
+            this.down.setAlpha(0.25).setInteractive();
             if(downState === ACTION_BUTTON_STATE.WALK) {
                 this.down.setFrame(2);
             } else if(downState === ACTION_BUTTON_STATE.ATTACK) {
@@ -125,7 +125,7 @@ class ActionButtonsGui extends BaseSceneComponent {
         if(leftState === ACTION_BUTTON_STATE.NONE) {
             this.left.setAlpha(0).disableInteractive();
         } else {
-            this.left.setAlpha(0.15).setInteractive();
+            this.left.setAlpha(0.25).setInteractive();
             if(leftState === ACTION_BUTTON_STATE.WALK) {
                 this.left.setFrame(3);
             } else if(leftState === ACTION_BUTTON_STATE.ATTACK) {

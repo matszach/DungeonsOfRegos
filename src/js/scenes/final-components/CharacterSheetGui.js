@@ -28,6 +28,10 @@ class CharacterSheetGui extends BaseSceneComponent {
         this.container.add(playerSilhuette); 
         this.displayItems();
         this.displayAttributes();
+
+        // exit button
+        const close = BaseSceneComponent.closeButton(425, -275, scene, () => scene.toggleCharacterSheet())
+        this.container.add(close);
     }
 
     makeItemBox(x, y, item, type, itemX, itemY) {

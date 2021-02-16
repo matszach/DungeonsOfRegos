@@ -113,4 +113,5 @@ class BaseScene extends Phaser.Scene {
         Holder.onResizeEvents.length = 0;
         this.scene.start(name);
     }
+
 }
