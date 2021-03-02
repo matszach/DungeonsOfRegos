@@ -14,8 +14,8 @@ class Inventory {
         }
     }
 
-    constructor(player) {
-        this.player = player;
+    constructor(user) {
+        this.user = user;
         this.equipped = {
             mainHand: null,
             offHand: null,
@@ -64,7 +64,7 @@ class Inventory {
         if(!!key && !this.isBackpackFull()) {
             const item = this.equipped[key];
             this.equipped[key] = undefined;
-            this.player.attr.removeModifiers(item.modifiers);
+            this.user.attr.removeModifiers(item.modifiers);
             this.putInBackpack(item);
             return true;
         }
@@ -76,7 +76,7 @@ class Inventory {
         if(!item) {
             return false;
         } else if (item.type === ITEM_TYPE.CONSUMABLE) {
-            item.use(Root.player);
+            item.use(this.user);
             this.backpack[y * 8 + x] = undefined;
             return true
         } else if (this.equip(item)) {
@@ -96,11 +96,11 @@ class Inventory {
                     return false;
                 } else {
                     this.putInBackpack(equipped);
-                    this.player.attr.removeModifiers(equipped.modifiers);
+                    this.user.attr.removeModifiers(equipped.modifiers);
                 }
             }
             this.equipped[key] = item;
-            this.player.attr.addModifiers(item.modifiers);
+            this.user.attr.addModifiers(item.modifiers);
             return true;
         }
         return false;
@@ -114,4 +114,7 @@ class Inventory {
         return false;
     }
 
+    drop(x, y) {
+        this.backpack[y * 8 + x] = null;
+    } 
 }

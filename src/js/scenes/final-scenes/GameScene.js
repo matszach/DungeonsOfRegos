@@ -9,21 +9,24 @@ class GameScene extends BaseScene {
             'armors', 'boots', 'floors', 'helmets', 'necklaces', 
             'players', 'potions', 'rings', 'shields', 'stairs', 
             'walls', 'weapons', 'valuables', 'pants', 'monsters',
-            'action_buttons', 'top_buttons', 'close_button'
+            'action_buttons', 'top_buttons'
         );
         this.loadImages(
-            'player_silhouette'
+            'player_silhouette', 'fog_of_war', 'close_button', 'trashcan_button'
         );
     }
 
     onCreate() {
         this.paused = false;
+        this.playerActionBlock = false;
         this.level = Root.level;
         this.levelHolder = LevelHolder.make(this, Root.level, Root.player);  
+        this.fogOfWar = FogOfWar.make(this);
         this.actionButtonGui = ActionButtonsGui.make(this);
         this.topButtons = GameViewTopButtons.make(this);
         this.centerOnPlayer();  
         this.setPlayerInControlControls();
+        Reveal.make(this);
     }
 
     centerOnPlayer() {
@@ -31,21 +34,27 @@ class GameScene extends BaseScene {
     }
 
     performPlayerActionInDirection(x, y) {
-        if(this.paused) {
+        if(this.paused || this.playerActionBlock) {
             return;
         }
-        x += Root.player.x; 
-        y += Root.player.y;
-        const field = Root.level.get(x, y);
-        if(Root.player.actorCanMoveTo(x, y, Root.level)) {
-            Root.player.actorMoveTo(x, y, Root.level);
-            if(!!field.item && Root.player.inv.pickup(field.item.item)) {
-                field.item.destroy();
-                field.item = null;
-            }
-        }
+        Root.player.doTurn(x, y);
         this.centerOnPlayer();
         this.actionButtonGui.update();
+        this.levelHolder.updateVisibility();
+        this.doMonsterTurns();
+    }
+
+    doMonsterTurns() {
+        const scene = this;
+        scene.playerActionBlock = true;
+        setTimeout(() => {
+            Root.level.monsters.filter(m => !m.expired).forEach(m => m.doTurn());
+            scene.actionButtonGui.update();
+            scene.levelHolder.updateVisibility();
+            setTimeout(() => {
+                scene.playerActionBlock = false;
+            }, 100);
+        }, 100);
     }
 
     setPlayerInControlControls() {

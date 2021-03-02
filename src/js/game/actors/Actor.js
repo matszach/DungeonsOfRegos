@@ -8,6 +8,10 @@ class Actor extends Entity {
         this.expired = false;
     }
 
+    doTurn(args) {
+        // abstract
+    }
+
     attack(targetActor) {
        
     }

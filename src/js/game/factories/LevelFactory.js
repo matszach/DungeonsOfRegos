@@ -29,7 +29,7 @@ class LevelFactory {
         this._createInteractables(nodes);
         this._createMonsters(nodes);
         this._placePlayer(nodes, player);
-        // this._TEST_outputMap(fieldMap);
+        this.level.prepareReferences();
         return this.level;
     }
 
@@ -63,18 +63,6 @@ class LevelFactory {
     _placePlayer(nodes, player) {
         const node = nodes.filter(n => n.type === NODE.PLAYER)[0];
         player.placeAt(node.x, node.y);
-    }
-
-    // TEST
-    _TEST_outputMap(fieldMap) {
-        let value = '';
-        for(let x = 0; x < fieldMap._xSize; x++) {
-            for(let y = 0; y < fieldMap._ySize; y++) {
-                value += fieldMap.get(x, y) === 1 ? 'X' : ' ';
-            }
-            value += '\n';
-        }
-        FileSystem.download.txt(value, 'test');
     }
 
 }

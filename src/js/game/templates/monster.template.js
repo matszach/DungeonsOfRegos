@@ -12,6 +12,7 @@ const MONSTER_TEMPLATES = {
 		minDmg: 1,
 		maxDmg: 3.0,
 		baseDefence: 0,
+		chanceToAct: 70.0,
 		ai: 'WANDERER',
 		rarity: 'COMMON',
 	},
@@ -28,7 +29,8 @@ const MONSTER_TEMPLATES = {
 		minDmg: 1,
 		maxDmg: 3.0,
 		baseDefence: 2.0,
-		ai: 'WANDERER',
+		chanceToAct: 70.0,
+		ai: 'SENTINEL',
 		rarity: 'COMMON',
 	},
 };

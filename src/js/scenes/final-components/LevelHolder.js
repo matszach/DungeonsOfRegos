@@ -60,13 +60,21 @@ class LevelHolder extends BaseSceneComponent {
         if(this.scale < 3) {
             this.scale *= 1.25;
         }
-        this.outerContainer.setScale(this.scale, this.scale);
+        this.outerContainer.setScale(this.scale);
+        this.scene.actionButtonGui?.container.setScale(this.scale)
+        this.scene.fogOfWar?.container.setScale(this.scale)
     }
 
     downscale() {
         if(this.scale > 0.5) {
             this.scale *= 0.8;
         }
-        this.outerContainer.setScale(this.scale, this.scale);
+        this.outerContainer.setScale(this.scale);
+        this.scene.actionButtonGui?.container.setScale(this.scale)
+        this.scene.fogOfWar?.container.setScale(this.scale)
+    }
+
+    updateVisibility() {
+        // TODO, implement
     }
 }

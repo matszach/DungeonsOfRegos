@@ -14,6 +14,7 @@ class CharacterSheetGui extends BaseSceneComponent {
         this.itemBoxes = [];
         this.itemTooltip = null;
         this.attrBlock = null;
+        this.isDeletionMode = false;
 
         // backgroud shade
         const shade = this.scene.add.rectangle(0, 0, 50000, 30000, 0x000000).setOrigin(0.5, 0.5).setAlpha(0.7); // TODO set sife of this to the size of window somehow
@@ -28,6 +29,10 @@ class CharacterSheetGui extends BaseSceneComponent {
         this.container.add(playerSilhuette); 
         this.displayItems();
         this.displayAttributes();
+
+        // trashcan button
+        const trash = this.trashButton(-160, 250);
+        this.container.add(trash);
 
         // exit button
         const close = BaseSceneComponent.closeButton(425, -275, scene, () => scene.toggleCharacterSheet())
@@ -55,15 +60,23 @@ class CharacterSheetGui extends BaseSceneComponent {
             ib.setAlpha(0.5);
         }).on('pointerup', event => {
             ib.setAlpha(0.6);
-            if(type === 'equipped' && !!item) {
-                Root.player.inv.unequip(item.type);
-            } else {
-                Root.player.inv.use(itemX, itemY);
-            }
+            gui.onItemClicked(type, item, itemX, itemY);
             gui.update();
         });
         this.itemBoxes.push(ib);
         this.container.add(ib);
+    }
+
+    onItemClicked(type, item, itemX, itemY) {
+        if(type === 'equipped' && !!item) {
+            Root.player.inv.unequip(item.type);
+        } else {
+            if(this.isDeletionMode) {
+                Root.player.inv.drop(itemX, itemY);
+            } else {
+                Root.player.inv.use(itemX, itemY);
+            }
+        }
     }
 
     makeItemTooltip(x, y, item) {
@@ -146,11 +159,35 @@ class CharacterSheetGui extends BaseSceneComponent {
         this.dropItemTooltip();
         this.displayItems();
         this.displayAttributes();
+        this.scene.levelHolder.updateVisibility();
     }
    
     destroy() {
         this.container.destroy();
         return this;
+    }
+
+    trashButton(x, y) {
+        const tb = this.scene.add.container(x, y);
+        const bck = this.scene.add.rectangle(0, 0, 60, 60).setAlpha(0.4).setScale(0.7, 0.7);
+        tb.add(bck);
+        const img = this.scene.add.sprite(0, 0, 'trashcan_button').setScale(0.5, 0.5).setAlpha(0.4);
+        tb.add(img);
+        const gui = this;
+        bck.setInteractive().on('pointerover', event => {
+            img.setAlpha(0.5);
+            MenuButton.cursor('pointer');
+        }).on('pointerout', event => {
+            img.setAlpha(0.4);
+            MenuButton.cursor('default');
+        }).on('pointerdown', event => {
+            img.setAlpha(0.6);
+        }).on('pointerup', event => {
+            img.setAlpha(0.5);
+            gui.isDeletionMode = !gui.isDeletionMode;
+            bck.setStrokeStyle(gui.isDeletionMode ? 3 : 0, gui.isDeletionMode ? 0xff0000 : 0x999999);
+        });
+        return tb;
     }
 
 }

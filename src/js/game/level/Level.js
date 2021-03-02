@@ -28,4 +28,22 @@ class Level {
         return this.fields.safeGet(x, y);
     }
 
+    prepareReferences() {
+        this.items = [];
+        this.monsters = [];
+        this.interactables = [];
+        const level = this;
+        this.iter(f => {
+            if(!!f.item) {
+                level.items.push(f.item);
+            }
+            if(!!f.actor && f.actor.isMonster) {
+                level.monsters.push(f.actor);
+            }
+            if(!!f.interactable) {
+                level.interactables.push(f.interactable);
+            }
+        });
+    }
+
 }
