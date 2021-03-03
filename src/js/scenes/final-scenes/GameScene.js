@@ -53,8 +53,8 @@ class GameScene extends BaseScene {
             scene.levelHolder.updateVisibility();
             setTimeout(() => {
                 scene.playerActionBlock = false;
-            }, 100);
-        }, 100);
+            }, 80);
+        }, 20);
     }
 
     setPlayerInControlControls() {

@@ -160,6 +160,11 @@ class ActionButtonsGui extends BaseSceneComponent {
         }
     }
 
+    toggleVisibility() {
+        this.visible = this.visible === undefined ? false : !this.visible;
+        this.container.setAlpha(this.visible ? 1 : 0);
+    }
+
     destroy() {
         this.container.destroy();
         return this;
