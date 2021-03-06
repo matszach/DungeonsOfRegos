@@ -159,7 +159,7 @@ class CharacterSheetGui extends BaseSceneComponent {
         this.dropItemTooltip();
         this.displayItems();
         this.displayAttributes();
-        this.scene.levelHolder.updateVisibility();
+        this.scene.updateVisibility();
     }
    
     destroy() {

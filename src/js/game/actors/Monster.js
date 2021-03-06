@@ -9,7 +9,7 @@ class Monster extends Actor {
     }
 
     doTurn() {
-        // test monster logic
+        // test monster logic FIXME
         if(Root.rng.chance(this.chanceToAct)) {
             const x = Root.rng.pick([1, -1, 0, 0]);
             const y = x === 0 ? Root.rng.pick([1, -1]) : 0;

@@ -67,7 +67,7 @@ class ActorAttributes {
     }
 
     crit() {
-        return (this.player.inv.equipped.mainHand?.critChance || 1) + this.luck()/10;
+        return (this.player.inv.equipped.mainHand?.critChance || 1) + this.luck()/10 + this.senses()/10;
     }
 
     minDmg() {
@@ -79,7 +79,7 @@ class ActorAttributes {
     }
 
     penetration() {
-        return this.player.inv.equipped.mainHand?.penetration || 0;
+        return (this.player.inv.equipped.mainHand?.penetration || 0) + + this.senses()/25;
     }
 
     dodge() {

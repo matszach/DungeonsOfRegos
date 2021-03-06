@@ -72,8 +72,5 @@ class LevelHolder extends BaseSceneComponent {
         this.scene.actionButtonGui?.container.setScale(this.scale)
         this.scene.fogOfWar?.container.setScale(this.scale)
     }
-
-    updateVisibility() {
-        // TODO, implement
-    }
+    
 }

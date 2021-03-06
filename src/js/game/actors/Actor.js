@@ -8,12 +8,39 @@ class Actor extends Entity {
         this.expired = false;
     }
 
+    destroy() {
+        super.destroy();
+        this.expired = true;
+    }
+
     doTurn(args) {
         // abstract
     }
 
     attack(targetActor) {
-       
+        const attackResult = {
+            successful: false,
+            damage: 0,
+            crit: false,
+            fatal: false
+        };
+        // target tries to dodge
+        if(!Root.rng.chance(targetActor.attr.dodge()/100)) {
+            attackResult.successful = true;
+            let damage = Root.rng.float(this.attr.minDmg(), this.attr.maxDmg());
+            if(Root.rng.chance(this.attr.crit()/100)) {
+                damage *= 2;
+                attackResult.crit = true;
+            }
+            let defence = targetActor.attr.defence() - this.attr.penetration();
+            defence = defence > 0 ? defence : 0;
+            damage -= defence;
+            damage = damage > 0 ? damage : 0;
+            attackResult.damage = damage;
+            targetActor.attr.damage(damage); 
+            attackResult.fatal = !targetActor.attr.alive();
+        }
+        return attackResult;
     }
 
     actorCanMoveTo(x, y, level) {

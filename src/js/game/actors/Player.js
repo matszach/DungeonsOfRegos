@@ -15,7 +15,11 @@ class Player extends Actor {
                 field.item = null;
             } 
         } else if(!!field.actor) {
-            // TODO attack here
+            const result = this.attack(field.actor);
+            if(result.fatal) {
+                field.actor.destroy();
+                field.actor = null;
+            }
         } else if(!!field.interactable) {
             field.interactable.onInteract(this);
         }

@@ -48,7 +48,7 @@ class GameScene extends BaseScene {
         Root.player.doTurn(x, y);
         this.centerOnPlayer();
         this.actionButtonGui.update();
-        this.levelHolder.updateVisibility();
+        this.updateVisibility();
         this.doMonsterTurns();
     }
 
@@ -56,9 +56,10 @@ class GameScene extends BaseScene {
         const scene = this;
         scene.playerActionBlock = true;
         setTimeout(() => {
-            Root.level.monsters.filter(m => !m.expired).forEach(m => m.doTurn());
+            Root.level.monsters = Root.level.monsters.filter(m => !m.expired);
+            Root.level.monsters.forEach(m => m.doTurn());
             scene.actionButtonGui.update();
-            scene.levelHolder.updateVisibility();
+            scene.updateVisibility();
             setTimeout(() => {
                 scene.playerActionBlock = false;
             }, 80);
@@ -132,4 +133,8 @@ class GameScene extends BaseScene {
         });
     }
     
+    updateVisibility() {
+        Root.scene.fogOfWar.update();
+    }
+
 }
