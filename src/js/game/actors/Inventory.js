@@ -79,6 +79,8 @@ class Inventory {
             item.use(this.user);
             this.backpack[y * 8 + x] = undefined;
             return true
+        } else if (item.type === ITEM_TYPE.KEY) {
+            return false;
         } else if (this.equip(item)) {
             this.backpack[y * 8 + x] = undefined;
             return true;
@@ -115,6 +117,39 @@ class Inventory {
     }
 
     drop(x, y) {
-        this.backpack[y * 8 + x] = null;
+        const item = this.backpack[y * 8 + x];
+        if(!!item && item.canBedropped) {
+            this.backpack[y * 8 + x] = null;
+        }
     } 
+
+    find(query) {
+        const keys = Object.keys(query);
+        return this.backpack.filter(item => !!item).filter(item => {
+            const template = item._template;
+            for(let i = 0; i < keys.length; i++) {
+                const key = keys[i];
+                const value = query[key];
+                if(template[key] !== value) {
+                    return false;
+                }
+            }   
+            return true;
+        });
+    }
+
+    has(query) {
+        return this.find(query).length > 0;
+    }
+
+    purgeBeforeNextLevel() {
+        this.backpack.forEach((item, index, backpack) => {
+            if(!item) {
+                return;
+            }
+            if(item._template.type === 'KEY') {
+                backpack[index] = undefined;
+            }
+        })
+    }
 }

@@ -6,6 +6,7 @@ class Item {
         this.rarity = RARITY[template.rarity];
         this.name = template.name;
         this.value = template.value;
+        this.canBeDropped = true;
     } 
 
 }

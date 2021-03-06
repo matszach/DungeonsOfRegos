@@ -1,6 +1,6 @@
 class Level {
 
-    constructor(x, y, player) {
+    constructor(x, y, player, diff, depth) {
         this.player = player;
         this.scene;
         this.container;
@@ -12,6 +12,8 @@ class Level {
                 item: null
             };
         });
+        this.diff = diff;
+        this.depth = depth;
 
         // reference holders
         this.items = [];

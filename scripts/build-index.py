@@ -30,7 +30,10 @@ many(['game/Entity.js', 'game/actors/ActorAttributes.js', 'game/actors/Inventory
 many(['game/fields/Field.js'])
 dirs(['game/fields/final-fields/'])
 many(['game/items/Item.js', 'game/items/Equippable.js', 'game/items/Weapon.js', 
-    'game/items/Valuable.js', 'game/items/Money.js', 'game/items/Consumable.js', 'game/items/ItemEntity.js'])
+    'game/items/Valuable.js', 'game/items/Money.js', 'game/items/Consumable.js', 
+    'game/items/Key.js', 'game/items/ItemEntity.js'])
+many(['game/interactables/Interactable.js', 'game/interactables/LevelExit.js', 
+    'game/interactables/Altar.js', 'game/interactables/Transmuter.js'])
 dirs(['game/factories/modules/'])
 many(['game/factories/LevelFactory.js', 'game/factories/PlayerFactory.js'])
 one('game/level/Level.js')

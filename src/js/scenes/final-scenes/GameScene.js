@@ -7,9 +7,9 @@ class GameScene extends BaseScene {
     preload() {
         this.loadSprites(
             'armors', 'boots', 'floors', 'helmets', 'necklaces', 
-            'players', 'potions', 'rings', 'shields', 'stairs', 
-            'walls', 'weapons', 'valuables', 'pants', 'monsters',
-            'action_buttons', 'top_buttons'
+            'players', 'potions', 'rings', 'shields', 'pit', 
+            'walls', 'weapons', 'weapons2', 'valuables', 'pants', 
+            'monsters', 'action_buttons', 'top_buttons', 'keys'
         );
         this.loadImages(
             'player_silhouette', 'fog_of_war', 'close_button', 'trashcan_button'
@@ -27,6 +27,14 @@ class GameScene extends BaseScene {
         this.centerOnPlayer();  
         this.setPlayerInControlControls();
         Reveal.make(this);
+    }
+
+    reload() {
+        this.levelHolder.destroy();
+        this.fogOfWar.destroy();
+        this.actionButtonGui.destroy(); // FIXME visibility should persist
+        this.topButtons.destroy();
+        this.onCreate();
     }
 
     centerOnPlayer() {
@@ -113,5 +121,15 @@ class GameScene extends BaseScene {
             this.setPauseMenuControls();
         }
     }  
+
+    goToNextLevel() {
+        const scene = this;
+        const levelFactory = new LevelFactory();
+        Root.player.prepareForNextLevel();
+        levelFactory.asyncCreate(Root.level.diff, Root.level.depth + 1, Root.player, level => {
+            Root.level = level;
+            scene.reload();
+        });
+    }
     
 }

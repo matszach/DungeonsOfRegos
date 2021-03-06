@@ -13,7 +13,16 @@ class Player extends Actor {
             if(!!field.item && this.inv.pickup(field.item.item)) {
                 field.item.destroy();
                 field.item = null;
-            }
+            } 
+        } else if(!!field.actor) {
+            // TODO attack here
+        } else if(!!field.interactable) {
+            field.interactable.onInteract(this);
         }
+    }
+
+    prepareForNextLevel() {
+        this.inv.purgeBeforeNextLevel();
+        this.attr.fullHeal();
     }
 }

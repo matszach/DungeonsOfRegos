@@ -17,6 +17,7 @@ const Game = new Phaser.Game({
 
 // global data accessor
 const Root = {
+    scene: null,
     player: null,
     level: null,
     rng: new Rng()

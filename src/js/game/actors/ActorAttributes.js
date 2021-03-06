@@ -32,6 +32,11 @@ class ActorAttributes {
         return this;
     }
 
+    fullHeal() {
+        this.damageTaken = 0;
+        return this;
+    }
+
     alive() {
         return this.damageTaken < this.health();
     }

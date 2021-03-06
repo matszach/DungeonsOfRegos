@@ -17,7 +17,7 @@ class ItemFactory {
         );
     }
 
-    _calcType(mainHand, offHand, head, chest, legs, feet, neck, finger, consumable, valuable, money) {
+    _calcType(mainHand, offHand, head, chest, legs, feet, neck, finger, consumable, valuable) {
         return Root.rng.weightedPick(
             ['MAIN_HAND', mainHand],
             ['OFF_HAND', offHand],
@@ -28,37 +28,16 @@ class ItemFactory {
             ['NECK', neck],
             ['FINGER', finger],
             ['CONSUMABLE', consumable],
-            ['VALUABLE', valuable],
-            ['MONEY', money]
+            ['VALUABLE', valuable]
         );
-    }
-
-    _moneyByRarity(rarity) {
-        switch (rarity) {
-            case 'COMMON': return Root.rng.int(1, 20);
-            case 'UNCOMMON': return Root.rng.int(20, 50);
-            case 'RARE': return Root.rng.int(50, 100);
-            case 'EPIC': return Root.rng.int(100, 250);
-            case 'LEGENDARY': return Root.rng.int(250, 500);
-            default: return 1;
-        }
-    }
-
-    _toMoneyTemplate(quantity, rarityKey) {
-        return {
-            value: quantity,
-            type: 'MONEY',
-            name: 'Money',
-            rarity: rarityKey
-        };
     }
 
     _toItem(template) {
         switch (template.type) {
-            case 'MONEY': return new Money(template);
             case 'VALUABLE': return new Valuable(template);
             case 'MAIN_HAND': return new Weapon(template);
             case 'CONSUMABLE': return new Consumable(template);
+            case 'KEY': return new Key(template);
             default: return new Equippable(template);
         }
     }
@@ -66,17 +45,11 @@ class ItemFactory {
     pick(rarityInfo, typeInfo) {
         const typeKey = this._calcType(...typeInfo);
         const rarityKey = this._calcRarity(...rarityInfo);
-        let template;
-        if(typeKey === 'MONEY') {
-            const money = this._moneyByRarity(rarityKey);
-            template = this._toMoneyTemplate(money, rarityKey);
-        } else {
-            const options = ItemFactory.ALL_ITEMS.filter(i => i.type === typeKey && i.rarity === rarityKey);
-            template = Root.rng.pick(options);
-        }
+        const options = ItemFactory.ALL_ITEMS.filter(i => i.type === typeKey && i.rarity === rarityKey);
+        // const template = Root.rng.pick(options);
 
         // TEMP
-        template = Root.rng.pick(ItemFactory.ALL_ITEMS);
+        const template = Root.rng.pick(ItemFactory.ALL_ITEMS);
 
         return this._toItem(template);
     }
@@ -86,15 +59,16 @@ class ItemFactory {
         if(node.type === NODE.ITEM_WEAK) {
             item = this.pick(
                 [10, 5, 2, 1, 0],
-                [1, 1, 1, 1, 1, 1, 1, 2, 2, 2]
-
+                [1, 1, 1, 1, 1, 1, 1, 2, 2, 1]
             );
         } else if(node.type === NODE.ITEM_STRONG) {
             item = this.pick(
                 [5, 15, 10, 5, 1],
                 [2, 2, 2, 2, 2, 2, 2, 1, 2, 1]
             );
-        } 
+        } else if(node.type === NODE.KEY) {
+            item = new Key(KEY_TEMPLATES.NEXT_LEVEL_KEY);
+        }
         return new ItemEntity(item);
     }
     

@@ -6,6 +6,7 @@ class LevelFactory {
         this.itemFactory = new ItemFactory();
         this.monsterFactory = new MonsterFactory();
         this.fieldFactory = new FieldFactory();
+        this.interactableFactory = new InteractableFactory();
         this.level = null;
     }
 
@@ -23,7 +24,7 @@ class LevelFactory {
     create(diff, depth, player) {
         const {fieldMap, rooms} = this.ftmBuilder.build(diff, depth, player);
         const {nodes} = this.roomBuilder.build(fieldMap, rooms);
-        this.level = new Level(fieldMap._xSize, fieldMap._ySize, player);
+        this.level = new Level(fieldMap._xSize, fieldMap._ySize, player, diff, depth);
         this._createFields(fieldMap);
         this._createItems(nodes);
         this._createInteractables(nodes);
@@ -43,13 +44,17 @@ class LevelFactory {
     _createItems(nodes) {
         const itf = this.itemFactory;
         const level = this.level;
-        nodes.filter(n => [NODE.ITEM_WEAK, NODE.ITEM_STRONG].includes(n.type)).forEach(n => {
+        nodes.filter(n => [NODE.ITEM_WEAK, NODE.ITEM_STRONG, NODE.KEY].includes(n.type)).forEach(n => {
             level.fields.get(n.x, n.y).item = itf.create(n);
         });
     }
 
     _createInteractables(nodes) {
-
+        const nf = this.interactableFactory;
+        const level = this.level;
+        nodes.filter(n => [NODE.EXIT, NODE.ALTAR, NODE.TRANSMUTER].includes(n.type)).forEach(n => {
+            level.fields.get(n.x, n.y).interactable = nf.create(n);
+        });
     }
 
     _createMonsters(nodes) {
@@ -62,7 +67,7 @@ class LevelFactory {
 
     _placePlayer(nodes, player) {
         const node = nodes.filter(n => n.type === NODE.PLAYER)[0];
-        player.placeAt(node.x, node.y);
+        this.level.fields.get(node.x, node.y).actor = player;
     }
 
 }

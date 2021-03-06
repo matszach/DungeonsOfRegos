@@ -17,6 +17,7 @@ for path in filter(lambda p: not p.startswith('_'), os.listdir(RAW_PATH)):
         for j, rec in enumerate(rows): 
             out += f'\t{rec[0].upper()}: {{\n'
             out += f'\t\tid: {j},\n'
+            out += f'\t\tinternal: \'{rec[0].upper()}\',\n'
             for i, col in enumerate(cols[1:]):
                 value = rec[i + 1]
                 if value in [False, True, 'False', 'True']:

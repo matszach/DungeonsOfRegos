@@ -57,8 +57,7 @@ class RoomBuilder {
 
     _buildEntryRoom(fieldMap) {
         const {centerX: cx, centerY: cy} = this._entryRoom;
-        this._node(cx, cy, FIELD_TEMPLATES.STAIRS_UP);
-        this._node(cx + 1, cy, NODE.PLAYER);
+        this._node(cx, cy, NODE.PLAYER);
         this._node(cx + 2, cy + 2, NODE.ITEM_WEAK, 0.25);
         this._node(cx - 2, cy + 2, NODE.ITEM_WEAK, 0.25);
         this._node(cx + 2, cy - 2, NODE.ITEM_WEAK, 0.25);
@@ -67,7 +66,7 @@ class RoomBuilder {
 
     _buildExitRoom(fieldMap) {
         const {centerX: cx, centerY: cy} = this._exitRoom;
-        this._node(cx, cy, FIELD_TEMPLATES.STAIRS_DOWN);
+        this._node(cx, cy, NODE.EXIT);
     }
     
     _buildKeyRoom(fieldMap) {

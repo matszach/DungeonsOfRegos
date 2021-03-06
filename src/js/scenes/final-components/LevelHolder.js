@@ -24,13 +24,12 @@ class LevelHolder extends BaseSceneComponent {
         }).iter((v, x, y) => {
             v.actor?.create(this.scene, this.innerContainer, x, y);
         });
-        player.create(this.scene, this.innerContainer);
         this.attachScrollListener();
     }
 
     destroy() {
         this.outerContainer.destroy();
-        window.removeEventListener('wheel'); // TODO might not work properly, no way to test yet
+        // window.removeEventListener('wheel'); // TODO might not work properly, no way to test yet
         return this;
     }
 

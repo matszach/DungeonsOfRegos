@@ -1,6 +1,7 @@
 const MONSTER_TEMPLATES = {
 	ORC: {
 		id: 0,
+		internal: 'ORC',
 		name: 'Orc',
 		spriteset: 'monsters',
 		frame: 0,
@@ -18,6 +19,7 @@ const MONSTER_TEMPLATES = {
 	},
 	ORC_GUARD: {
 		id: 1,
+		internal: 'ORC_GUARD',
 		name: 'Orc guard',
 		spriteset: 'monsters',
 		frame: 1,

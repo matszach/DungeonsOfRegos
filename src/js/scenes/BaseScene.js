@@ -10,6 +10,7 @@ class BaseScene extends Phaser.Scene {
     }
 
     create() {
+        Root.scene = this;
         this.onCreate();
         this.refit();
     }

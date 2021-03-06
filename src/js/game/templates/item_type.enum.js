@@ -9,5 +9,5 @@ const ITEM_TYPE = {
 	FINGER: 7,
 	CONSUMABLE: 8,
 	VALUABLE: 9,
-	MONEY: 10,
+	KEY: 10,
 };

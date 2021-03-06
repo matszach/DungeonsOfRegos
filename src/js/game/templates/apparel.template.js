@@ -1,6 +1,7 @@
 const APPAREL_TEMPLATES = {
 	WD_RD_SLD: {
 		id: 0,
+		internal: 'WD_RD_SLD',
 		name: 'Wooden round shield',
 		spriteset: 'shields',
 		frame: 0,
@@ -16,6 +17,7 @@ const APPAREL_TEMPLATES = {
 	},
 	WD_TW_SLD: {
 		id: 1,
+		internal: 'WD_TW_SLD',
 		name: 'Wooden tower shield',
 		spriteset: 'shields',
 		frame: 10.0,
@@ -31,6 +33,7 @@ const APPAREL_TEMPLATES = {
 	},
 	ST_KT_SLD: {
 		id: 2,
+		internal: 'ST_KT_SLD',
 		name: 'Steel kite shield',
 		spriteset: 'shields',
 		frame: 20.0,
@@ -46,6 +49,7 @@ const APPAREL_TEMPLATES = {
 	},
 	LN_SRT: {
 		id: 3,
+		internal: 'LN_SRT',
 		name: 'Linnen shirt',
 		spriteset: 'armors',
 		frame: 0,
@@ -61,6 +65,7 @@ const APPAREL_TEMPLATES = {
 	},
 	RN_LN_SRT: {
 		id: 4,
+		internal: 'RN_LN_SRT',
 		name: 'Ruined linnen shirt',
 		spriteset: 'armors',
 		frame: 1,
@@ -76,6 +81,7 @@ const APPAREL_TEMPLATES = {
 	},
 	LT_SRT: {
 		id: 5,
+		internal: 'LT_SRT',
 		name: 'Leather armor',
 		spriteset: 'armors',
 		frame: 10.0,
@@ -91,6 +97,7 @@ const APPAREL_TEMPLATES = {
 	},
 	RN_LT_SRT: {
 		id: 6,
+		internal: 'RN_LT_SRT',
 		name: 'Ruined leather armor',
 		spriteset: 'armors',
 		frame: 11.0,
@@ -106,6 +113,7 @@ const APPAREL_TEMPLATES = {
 	},
 	LN_PTS: {
 		id: 7,
+		internal: 'LN_PTS',
 		name: 'Linnen pants',
 		spriteset: 'pants',
 		frame: 0,
@@ -121,6 +129,7 @@ const APPAREL_TEMPLATES = {
 	},
 	LN_PTS: {
 		id: 8,
+		internal: 'LN_PTS',
 		name: 'Ruined linnen shirt',
 		spriteset: 'pants',
 		frame: 1,
@@ -136,6 +145,7 @@ const APPAREL_TEMPLATES = {
 	},
 	LT_BTS: {
 		id: 9,
+		internal: 'LT_BTS',
 		name: 'Leather boots',
 		spriteset: 'boots',
 		frame: 0,
@@ -151,6 +161,7 @@ const APPAREL_TEMPLATES = {
 	},
 	PD_HT: {
 		id: 10,
+		internal: 'PD_HT',
 		name: 'Padded helmet',
 		spriteset: 'helmets',
 		frame: 0,
@@ -166,6 +177,7 @@ const APPAREL_TEMPLATES = {
 	},
 	S_RNG: {
 		id: 11,
+		internal: 'S_RNG',
 		name: 'Silver ring',
 		spriteset: 'rings',
 		frame: 10.0,
@@ -181,6 +193,7 @@ const APPAREL_TEMPLATES = {
 	},
 	G_RNG: {
 		id: 12,
+		internal: 'G_RNG',
 		name: 'Golden ring',
 		spriteset: 'rings',
 		frame: 0,
@@ -196,6 +209,7 @@ const APPAREL_TEMPLATES = {
 	},
 	S_RNG_M: {
 		id: 13,
+		internal: 'S_RNG_M',
 		name: 'Silver ring of might',
 		spriteset: 'rings',
 		frame: 11.0,
@@ -211,6 +225,7 @@ const APPAREL_TEMPLATES = {
 	},
 	G_RNG_M: {
 		id: 14,
+		internal: 'G_RNG_M',
 		name: 'Golden ring of might',
 		spriteset: 'rings',
 		frame: 1,
@@ -226,6 +241,7 @@ const APPAREL_TEMPLATES = {
 	},
 	S_RNG_A: {
 		id: 15,
+		internal: 'S_RNG_A',
 		name: 'Silver ring of agility',
 		spriteset: 'rings',
 		frame: 12.0,
@@ -241,6 +257,7 @@ const APPAREL_TEMPLATES = {
 	},
 	G_RNG_A: {
 		id: 16,
+		internal: 'G_RNG_A',
 		name: 'Golden ring of agility',
 		spriteset: 'rings',
 		frame: 2.0,
@@ -256,6 +273,7 @@ const APPAREL_TEMPLATES = {
 	},
 	CH_NCK_M: {
 		id: 17,
+		internal: 'CH_NCK_M',
 		name: 'Chain necklace of might',
 		spriteset: 'necklaces',
 		frame: 0,
@@ -271,6 +289,7 @@ const APPAREL_TEMPLATES = {
 	},
 	CH_NCK_A: {
 		id: 18,
+		internal: 'CH_NCK_A',
 		name: 'Chain necklace of agility',
 		spriteset: 'necklaces',
 		frame: 2.0,

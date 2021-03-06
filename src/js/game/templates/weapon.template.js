@@ -1,6 +1,7 @@
 const WEAPON_TEMPLATES = {
 	WD_BS: {
 		id: 0,
+		internal: 'WD_BS',
 		name: 'Wooden broadsword',
 		spriteset: 'weapons',
 		frame: 0,
@@ -20,6 +21,7 @@ const WEAPON_TEMPLATES = {
 	},
 	WD_LS: {
 		id: 1,
+		internal: 'WD_LS',
 		name: 'Wooden longsword',
 		spriteset: 'weapons',
 		frame: 10.0,
@@ -39,6 +41,7 @@ const WEAPON_TEMPLATES = {
 	},
 	WD_AX: {
 		id: 2,
+		internal: 'WD_AX',
 		name: 'Wooden axe',
 		spriteset: 'weapons',
 		frame: 20.0,
@@ -58,6 +61,7 @@ const WEAPON_TEMPLATES = {
 	},
 	WD_MC: {
 		id: 3,
+		internal: 'WD_MC',
 		name: 'Wooden mace',
 		spriteset: 'weapons',
 		frame: 30.0,
@@ -77,6 +81,7 @@ const WEAPON_TEMPLATES = {
 	},
 	WD_HM: {
 		id: 4,
+		internal: 'WD_HM',
 		name: 'Wooden hammer',
 		spriteset: 'weapons',
 		frame: 40.0,

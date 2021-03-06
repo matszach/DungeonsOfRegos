@@ -1,6 +1,7 @@
 const CONSUMABLE_TEMPLATES = {
 	L_HEAL: {
 		id: 0,
+		internal: 'L_HEAL',
 		name: 'Light healing potion',
 		spriteset: 'potions',
 		frame: 0,
@@ -11,6 +12,7 @@ const CONSUMABLE_TEMPLATES = {
 	},
 	M_HEAL: {
 		id: 1,
+		internal: 'M_HEAL',
 		name: 'Medium healing potion',
 		spriteset: 'potions',
 		frame: 10.0,
@@ -21,6 +23,7 @@ const CONSUMABLE_TEMPLATES = {
 	},
 	G_HEAL: {
 		id: 2,
+		internal: 'G_HEAL',
 		name: 'Greater healing potion',
 		spriteset: 'potions',
 		frame: 30.0,

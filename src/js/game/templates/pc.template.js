@@ -1,6 +1,7 @@
 const PC_TEMPLATES = {
 	DWARF: {
 		id: 0,
+		internal: 'DWARF',
 		name: 'Gardlung',
 		spriteset: 'players',
 		frame: 0,
@@ -12,6 +13,7 @@ const PC_TEMPLATES = {
 	},
 	ROGUE: {
 		id: 1,
+		internal: 'ROGUE',
 		name: 'Bastien',
 		spriteset: 'players',
 		frame: 1,
@@ -23,6 +25,7 @@ const PC_TEMPLATES = {
 	},
 	KNIGHT: {
 		id: 2,
+		internal: 'KNIGHT',
 		name: 'Cecil',
 		spriteset: 'players',
 		frame: 2.0,
@@ -34,6 +37,7 @@ const PC_TEMPLATES = {
 	},
 	NOBLE: {
 		id: 3,
+		internal: 'NOBLE',
 		name: 'Elyon',
 		spriteset: 'players',
 		frame: 3.0,
