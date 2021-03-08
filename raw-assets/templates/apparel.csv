@@ -1,16 +1,28 @@
 key,name,spriteset,frame,type,value,might,agility,health,senses,luck,defence,rarity
 
-WD_RD_SLD,Wooden round shield,shields,0,OFF_HAND,10,0,0,0,0,0,2,COMMON
-WD_TW_SLD,Wooden tower shield,shields,10,OFF_HAND,15,0,-2,0,0,0,3,COMMON
-ST_KT_SLD,Steel kite shield,shields,20,OFF_HAND,30,0,0,0,0,0,3,UNCOMMON
+WOOD_ROUND_SHIELD,Wooden round shield,shields,0,OFF_HAND,10,0,0,0,0,0,2,COMMON
+WOOD_TOWER_SHIELD,Wooden tower shield,shields,10,OFF_HAND,15,0,-2,0,0,0,3,COMMON
+STEEL_KITE_SHIELD,Steel kite shield,shields,20,OFF_HAND,30,0,0,0,0,0,3,UNCOMMON
 
-LN_SRT,Linnen shirt,armors,0,CHEST,10,0,0,0,0,0,2,COMMON
-RN_LN_SRT,Ruined linnen shirt,armors,1,CHEST,1,0,0,0,0,0,1,COMMON
-LT_SRT,Leather armor,armors,10,CHEST,20,0,-1,0,0,0,3,COMMON
-RN_LT_SRT,Ruined leather armor,armors,11,CHEST,10,0,-1,0,0,0,2,COMMON
+LINN_SHIRT,Linnen shirt,armors,0,CHEST,10,0,0,0,0,0,2,COMMON
+RUIN_LINN_SHIRT,Ruined linnen shirt,armors,1,CHEST,1,0,0,0,0,0,1,COMMON
+LEATH_ARMOR,Leather armor,armors,10,CHEST,20,0,-2,0,0,0,3,COMMON
+RUIN_LEATH_ARMOR,Ruined leather armor,armors,11,CHEST,10,0,-2,0,0,0,2,COMMON
+CHAIN_ARMOR,Chain armor,armors,20,CHEST,50,0,-4,0,0,0,4,UNCOMMON
+RUIN_CHAIN_ARMOR,Ruined chain armor,armors,21,CHEST,20,0,-4,0,0,0,3,UNCOMMON
+BREASTPLATE,Breastplate,armors,30,CHEST,50,0,-4,0,0,0,4,UNCOMMON
+RUIN_BREASTPLATE,Ruined Breastplate,armors,31,CHEST,20,0,-4,0,0,0,3,UNCOMMON
+PLATE_ARMOR,Plate armor,armors,40,CHEST,120,0,-8,0,0,0,5,RARE
+RUIN_PLATE_ARMOR,Plate armor,armors,41,CHEST,70,0,-8,0,0,0,4,RARE
 
-LN_PTS,Linnen pants,pants,0,LEGS,10,0,0,0,0,0,2,COMMON
-LN_PTS,Ruined linnen shirt,pants,1,LEGS,1,0,0,0,0,0,1,COMMON
+LINN_PANTS,Linnen pants,pants,0,LEGS,10,0,0,0,0,0,2,COMMON
+RUIN_LINN_PANTS,Ruined linnen pants,pants,1,LEGS,1,0,0,0,0,0,1,COMMON
+LEATH_PANTS,Leather pants,pants,10,LEGS,20,0,-2,0,0,0,3,COMMON
+RUIN_LEATH_PANTS,Ruined leather shirt,pants,11,LEGS,10,0,-2,0,0,0,2,COMMON
+CHAIN_LEGS,Chain legs,pants,20,LEGS,50,0,-4,0,0,0,4,UNCOMMON
+RUIN_CHAIN_LEGS,Ruined chain legs,pants,21,LEGS,20,0,-4,0,0,0,3,UNCOMMON
+PLATE_LEGS,Chain legs,pants,30,LEGS,120,0,-8,0,0,0,5,RARE
+RUIN_PLATE_LEGS,Ruined chain legs,pants,31,LEGS,70,0,-8,0,0,0,4,RARE
 
 LT_BTS,Leather boots,boots,0,FEET,5,0,0,0,0,0,1,COMMON
 
@@ -23,8 +35,23 @@ G_RNG_M,Golden ring of might,rings,1,FINGER,100,10,0,0,0,0,0,RARE
 S_RNG_A,Silver ring of agility,rings,12,FINGER,50,0,5,0,0,0,0,UNCOMMON
 G_RNG_A,Golden ring of agility,rings,2,FINGER,100,0,10,0,0,0,0,RARE
 
-CH_NCK_M,Chain necklace of might,necklaces,0,NECK,50,5,0,0,0,0,0,UNCOMMON
-CH_NCK_A,Chain necklace of agility,necklaces,2,NECK,50,5,0,0,0,0,0,UNCOMMON
+CHAIN_NECK_MIGHT,Chain necklace of might,necklaces,0,NECK,50,5,0,0,0,0,0,COMMON
+CHAIN_NECK_SENS,Chain necklace of senses,necklaces,1,NECK,50,0,0,0,5,0,0,COMMON
+CHAIN_NECK_AGI,Chain necklace of agility,necklaces,2,NECK,50,0,5,0,0,0,0,COMMON
+CHAIN_NECK_LUCK,Chain necklace of luck,necklaces,3,NECK,50,0,0,0,0,5,0,COMMON
+CHAIN_NECK_HEALTH,Chain necklace of health,necklaces,4,NECK,50,0,0,5,0,0,0,COMMON
+CHAIN_NECK_BALANCE,Chain necklace of balance,necklaces,5,NECK,100,2,2,2,2,2,0,UNCOMMON
+CHAIN_NECK_BLIND_LUCK,Chain necklace of blind luck,necklaces,6,NECK,100,0,0,0,-10,15,0,UNCOMMON
+CHAIN_NECK_BLOOD,Chain necklace of blood,necklaces,7,NECK,150,0,0,15,0,0,0,RARE
+CHAIN_NECK_DEFENCE,Chain necklace of defence,necklaces,8,NECK,100,0,0,0,0,0,2,UNCOMMON
+CHAIN_NECK_PACT,Chain necklace of a pact,necklaces,8,NECK,200,0,0,-10,0,20,0,RARE
+
+
+
+
+
+
+
 
 
 

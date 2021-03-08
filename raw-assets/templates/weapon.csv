@@ -1,9 +1,61 @@
 key,name,spriteset,frame,type,value,might,agility,health,senses,luck,defence,minDamage,maxDamage,critChance,penetration,rarity
 
-WD_BS,Wooden broadsword,weapons,0,MAIN_HAND,10,0,0,0,0,0,0,5,10,10,0,COMMON
-WD_LS,Wooden longsword,weapons,10,MAIN_HAND,10,0,0,0,0,0,0,4,9,15,0,COMMON
-WD_AX,Wooden axe,weapons,20,MAIN_HAND,10,0,0,0,0,0,0,4,9,5,2,COMMON
-WD_MC,Wooden mace,weapons,30,MAIN_HAND,10,0,0,0,0,0,0,3,8,5,3,COMMON
-WD_HM,Wooden hammer,weapons,40,MAIN_HAND,10,0,0,0,0,0,0,3,8,2,4,COMMON
+WOOD_BS,Wooden broadsword,weapons,0,MAIN_HAND,10,0,0,0,0,0,0,5,10,10,0,COMMON
+WOOD_LS,Wooden longsword,weapons,10,MAIN_HAND,10,0,0,0,0,0,0,4,9,15,0,COMMON
+WOOD_AX,Wooden axe,weapons,20,MAIN_HAND,10,0,0,0,0,0,0,4,9,5,2,COMMON
+WOOD_MC,Wooden mace,weapons,30,MAIN_HAND,10,0,0,0,0,0,0,3,8,5,3,COMMON
+WOOD_HM,Wooden hammer,weapons,40,MAIN_HAND,10,0,0,0,0,0,0,3,8,2,4,COMMON
 
+IRON_BS,Iron broadsword,weapons,1,MAIN_HAND,40,0,0,0,0,0,0,7,12,10,0,UNCOMMON
+IRON_LS,Iron longsword,weapons,11,MAIN_HAND,40,0,0,0,0,0,0,6,11,15,0,UNCOMMON
+IRON_AX,Iron axe,weapons,21,MAIN_HAND,40,0,0,0,0,0,0,6,11,5,2,UNCOMMON
+IRON_MC,Iron mace,weapons,31,MAIN_HAND,40,0,0,0,0,0,0,5,10,5,3,UNCOMMON
+IRON_HM,Iron hammer,weapons,41,MAIN_HAND,40,0,0,0,0,0,0,5,10,2,4,UNCOMMON
 
+RUST_BS,Rusty broadsword,weapons,2,MAIN_HAND,20,0,0,0,0,0,0,6,11,10,0,UNCOMMON
+RUST_LS,Rusty longsword,weapons,12,MAIN_HAND,20,0,0,0,0,0,0,5,10,15,0,UNCOMMON
+RUST_AX,Rusty axe,weapons,22,MAIN_HAND,20,0,0,0,0,0,0,5,10,5,2,UNCOMMON
+RUST_MC,Rusty mace,weapons,32,MAIN_HAND,20,0,0,0,0,0,0,4,9,5,3,UNCOMMON
+RUST_HM,Rusty hammer,weapons,42,MAIN_HAND,20,0,0,0,0,0,0,4,9,2,4,UNCOMMON
+
+ROYAL_BS,Royal broadsword,weapons,3,MAIN_HAND,100,0,0,0,0,0,0,8,13,15,0,RARE
+ROYAL_LS,Royal longsword,weapons,13,MAIN_HAND,100,0,0,0,0,0,0,7,12,20,0,RARE
+ROYAL_AX,Royal axe,weapons,23,MAIN_HAND,100,0,0,0,0,0,0,7,12,10,2,RARE
+ROYAL_MC,Royal mace,weapons,33,MAIN_HAND,100,0,0,0,0,0,0,6,11,10,3,RARE
+ROYAL_HM,Royal hammer,weapons,43,MAIN_HAND,100,0,0,0,0,0,0,6,11,5,4,RARE
+
+CURSE_BS,Cursed broadsword,weapons,4,MAIN_HAND,80,0,0,0,0,-10,0,8,15,10,0,RARE
+CURSE_LS,Cursed longsword,weapons,14,MAIN_HAND,80,0,0,0,0,-10,0,7,14,15,0,RARE
+CURSE_AX,Cursed axe,weapons,24,MAIN_HAND,80,0,0,0,0,-10,0,7,14,5,2,RARE
+CURSE_MC,Cursed mace,weapons,34,MAIN_HAND,80,0,0,0,0,-10,0,6,13,5,3,RARE
+CURSE_HM,Cursed hammer,weapons,44,MAIN_HAND,80,0,0,0,0,-10,0,6,13,2,4,RARE
+
+MITH_BS,Mithril broadsword,weapons,5,MAIN_HAND,120,0,0,0,0,0,0,9,14,10,0,RARE
+MITH_LS,Mithril longsword,weapons,15,MAIN_HAND,120,0,0,0,0,0,0,8,13,15,0,RARE
+MITH_AX,Mithril axe,weapons,25,MAIN_HAND,120,0,0,0,0,0,0,8,13,5,2,RARE
+MITH_MC,Mithril mace,weapons,35,MAIN_HAND,120,0,0,0,0,0,0,7,12,5,3,RARE
+MITH_HM,Mithril hammer,weapons,45,MAIN_HAND,120,0,0,0,0,0,0,7,12,2,4,RARE
+
+AGI_BS,Agile broadsword,weapons,6,MAIN_HAND,120,0,5,0,0,0,0,8,13,10,0,RARE
+AGI_LS,Agile longsword,weapons,16,MAIN_HAND,120,0,5,0,0,0,0,7,12,15,0,RARE
+AGI_AX,Agile axe,weapons,26,MAIN_HAND,120,0,5,0,0,0,0,7,12,5,2,RARE
+AGI_MC,Agile mace,weapons,36,MAIN_HAND,120,0,5,0,0,0,0,6,11,5,3,RARE
+AGI_HM,Agile hammer,weapons,46,MAIN_HAND,120,0,5,0,0,0,0,6,11,2,4,RARE
+
+SPECT_BS,Spectral broadsword,weapons,7,MAIN_HAND,120,0,0,0,0,0,0,8,13,10,3,RARE
+SPECT_LS,Spectral longsword,weapons,17,MAIN_HAND,120,0,0,0,0,0,0,7,12,15,3,RARE
+SPECT_AX,Spectral axe,weapons,27,MAIN_HAND,120,0,0,0,0,0,0,7,12,5,5,RARE
+SPECT_MC,Spectral mace,weapons,37,MAIN_HAND,120,0,0,0,0,0,0,6,11,5,6,RARE
+SPECT_HM,Spectral hammer,weapons,47,MAIN_HAND,120,0,0,0,0,0,0,6,11,2,7,RARE
+
+MIGHT_BS,Mighty broadsword,weapons,8,MAIN_HAND,120,5,0,0,0,0,0,8,13,10,0,RARE
+MIGHT_LS,Mighty longsword,weapons,18,MAIN_HAND,120,5,0,0,0,0,0,7,12,15,0,RARE
+MIGHT_AX,Mighty axe,weapons,28,MAIN_HAND,120,5,0,0,0,0,0,7,12,5,2,RARE
+MIGHT_MC,Mighty mace,weapons,38,MAIN_HAND,120,5,0,0,0,0,0,6,11,5,3,RARE
+MIGHT_HM,Mighty hammer,weapons,48,MAIN_HAND,120,5,0,0,0,0,0,6,11,2,4,RARE
+
+ENCH_BS,Enchanted broadsword,weapons,8,MAIN_HAND,250,10,10,0,0,0,0,9,14,12,1,EPIC
+ENCH_LS,Enchanted longsword,weapons,18,MAIN_HAND,250,10,10,0,0,0,0,8,13,17,1,EPIC
+ENCH_AX,Enchanted axe,weapons,28,MAIN_HAND,250,10,10,0,0,0,0,8,13,7,3,EPIC
+ENCH_MC,Enchanted mace,weapons,38,MAIN_HAND,250,10,10,0,0,0,0,7,12,7,4,EPIC
+ENCH_HM,Enchanted hammer,weapons,48,MAIN_HAND,250,10,10,0,0,0,0,7,12,4,5,EPIC

@@ -57,7 +57,7 @@ class LevelHolder extends BaseSceneComponent {
 
     upscale() {
         if(this.scale < 3) {
-            this.scale *= 1.25;
+            this.scale *= 1.251;
         }
         this.outerContainer.setScale(this.scale);
         this.scene.actionButtonGui?.container.setScale(this.scale)
@@ -66,7 +66,7 @@ class LevelHolder extends BaseSceneComponent {
 
     downscale() {
         if(this.scale > 0.5) {
-            this.scale *= 0.8;
+            this.scale *= 0.799;
         }
         this.outerContainer.setScale(this.scale);
         this.scene.actionButtonGui?.container.setScale(this.scale)

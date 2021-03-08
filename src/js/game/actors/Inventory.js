@@ -118,7 +118,7 @@ class Inventory {
 
     drop(x, y) {
         const item = this.backpack[y * 8 + x];
-        if(!!item && item.canBedropped) {
+        if(!!item && item.canBeDropped) {
             this.backpack[y * 8 + x] = null;
         }
     } 
