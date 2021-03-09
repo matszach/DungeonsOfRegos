@@ -1,5 +1,5 @@
 {
-    "version": "0.1.1",
+    "version": "0.1.2",
     "scripts": {
         "run": "python scripts/run.py",
         "build": "python scripts/build.py"

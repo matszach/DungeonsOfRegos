@@ -26,7 +26,16 @@ RUIN_PLATE_LEGS,Ruined chain legs,pants,31,LEGS,70,0,-8,0,0,0,4,RARE
 
 LT_BTS,Leather boots,boots,0,FEET,5,0,0,0,0,0,1,COMMON
 
-PD_HT,Padded helmet,helmets,0,HEAD,5,0,0,0,0,0,1,COMMON
+PADD_HELMET,Padded helmet,helmets,0,HEAD,5,0,0,0,0,0,1,COMMON
+RUIN_PADD_HELMET,Ruined padded helmet,helmets,1,HEAD,1,0,0,0,0,0,0,COMMON
+LEATH_HELMET,Leather helmet,helmets,10,HEAD,15,0,0,0,-1,0,2,COMMON
+RUIN_LEATH_HELMET,Ruined leather helmet,helmets,11,HEAD,5,0,0,0,-1,0,1,COMMON
+CHAIN_COIF,Chain coif,helmets,20,HEAD,25,0,0,0,-2,0,3,UNCOMMON
+RUIN_CHAIN_COIF,Ruined chain coif,helmets,21,HEAD,10,0,0,0,-2,0,2,UNCOMMON
+STEEL_HELMET,Steel helmet,helmets,30,HEAD,50,0,0,0,-4,0,4,UNCOMMON
+RUIN_STEEL_HELMET,Ruined steel helmet,helmets,31,HEAD,25,0,0,0,-4,0,3,UNCOMMON
+STEEL_GREATHELM,Steel greathelm,helmets,40,HEAD,100,0,0,0,-8,0,5,RARE
+RUIN_STEEL_GREATHELM,Ruined steel greathelm,helmets,41,HEAD,50,0,0,0,-8,0,4,RARE
 
 S_RNG,Silver ring,rings,10,FINGER,25,0,0,0,0,0,0,COMMON
 G_RNG,Golden ring,rings,0,FINGER,50,0,0,0,0,0,0,UNCOMMON
