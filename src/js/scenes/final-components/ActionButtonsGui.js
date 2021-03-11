@@ -1,7 +1,7 @@
 class ActionButtonsGui extends BaseSceneComponent {
 
     static ALPHA = {
-        DEFAULT: 0.80,
+        DEFAULT: 0.30,
         HIDDEN: 0.00
     }
 

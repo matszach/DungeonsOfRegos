@@ -37,6 +37,10 @@ class GameScene extends BaseScene {
         this.onCreate();
     }
 
+    doFrame() {
+        this.levelHolder.tickAnimations();
+    }
+
     centerOnPlayer() {
         this.levelHolder.moveTo(Root.player.x, Root.player.y);
     }

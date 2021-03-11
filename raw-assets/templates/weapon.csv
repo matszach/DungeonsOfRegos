@@ -54,8 +54,8 @@ MIGHT_AX,Mighty axe,weapons,28,MAIN_HAND,120,5,0,0,0,0,0,7,12,5,2,RARE
 MIGHT_MC,Mighty mace,weapons,38,MAIN_HAND,120,5,0,0,0,0,0,6,11,5,3,RARE
 MIGHT_HM,Mighty hammer,weapons,48,MAIN_HAND,120,5,0,0,0,0,0,6,11,2,4,RARE
 
-ENCH_BS,Enchanted broadsword,weapons,8,MAIN_HAND,250,10,10,0,0,0,0,9,14,12,1,EPIC
-ENCH_LS,Enchanted longsword,weapons,18,MAIN_HAND,250,10,10,0,0,0,0,8,13,17,1,EPIC
-ENCH_AX,Enchanted axe,weapons,28,MAIN_HAND,250,10,10,0,0,0,0,8,13,7,3,EPIC
-ENCH_MC,Enchanted mace,weapons,38,MAIN_HAND,250,10,10,0,0,0,0,7,12,7,4,EPIC
-ENCH_HM,Enchanted hammer,weapons,48,MAIN_HAND,250,10,10,0,0,0,0,7,12,4,5,EPIC
+ENCH_BS,Enchanted broadsword,weapons,9,MAIN_HAND,250,10,10,0,0,0,0,9,14,12,1,EPIC
+ENCH_LS,Enchanted longsword,weapons,19,MAIN_HAND,250,10,10,0,0,0,0,8,13,17,1,EPIC
+ENCH_AX,Enchanted axe,weapons,29,MAIN_HAND,250,10,10,0,0,0,0,8,13,7,3,EPIC
+ENCH_MC,Enchanted mace,weapons,39,MAIN_HAND,250,10,10,0,0,0,0,7,12,7,4,EPIC
+ENCH_HM,Enchanted hammer,weapons,49,MAIN_HAND,250,10,10,0,0,0,0,7,12,4,5,EPIC

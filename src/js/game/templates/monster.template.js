@@ -6,7 +6,7 @@ const MONSTER_TEMPLATES = {
 		spriteset: 'monsters',
 		frame: 0,
 		might: 50.0,
-		agility: 30.0,
+		agility: 40.0,
 		health: 20.0,
 		senses: 30.0,
 		luck: 10.0,

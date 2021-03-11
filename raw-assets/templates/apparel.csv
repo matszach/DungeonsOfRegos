@@ -24,7 +24,12 @@ RUIN_CHAIN_LEGS,Ruined chain legs,pants,21,LEGS,20,0,-4,0,0,0,3,UNCOMMON
 PLATE_LEGS,Chain legs,pants,30,LEGS,120,0,-8,0,0,0,5,RARE
 RUIN_PLATE_LEGS,Ruined chain legs,pants,31,LEGS,70,0,-8,0,0,0,4,RARE
 
-LT_BTS,Leather boots,boots,0,FEET,5,0,0,0,0,0,1,COMMON
+LINN_FOOTWRAPS,Linnen footwraps,boots,0,FEET,5,0,0,0,0,0,1,COMMON
+RUIN_LINN_FOOTWRAPS,Ruined linnen footwraps,boots,1,FEET,1,0,0,0,0,0,0,COMMON
+LEATH_BOOTS,Leather boots,boots,10,FEET,10,0,0,0,0,0,2,COMMON
+RUIN_LEATH_BOOTS,Ruined leather boots,boots,11,FEET,5,0,0,0,0,0,1,COMMON
+REINF_LEATH_BOOTS,Reinforced leather boots,boots,20,FEET,25,0,0,0,0,0,3,UNCOMMON
+RUINED_REINF_LEATH_BOOTS,Ruined reinforced leather boots,boots,21,FEET,10,0,0,0,0,0,2,UNCOMMON
 
 PADD_HELMET,Padded helmet,helmets,0,HEAD,5,0,0,0,0,0,1,COMMON
 RUIN_PADD_HELMET,Ruined padded helmet,helmets,1,HEAD,1,0,0,0,0,0,0,COMMON

@@ -143,7 +143,7 @@ class CharacterSheetGui extends BaseSceneComponent {
         const critValue = this.scene.add.text(290, -200, this.player.attr.critToString()).setColor('#aaaaaa').setScale(1.4);
         this.attrBlock.add(critLabel).add(critValue);
         const penLabel = this.scene.add.text(140, -165, 'Armor pen.').setColor('#aaaaaa').setScale(1.4);
-        const penValue = this.scene.add.text(290, -165, this.player.attr.penetration()).setColor('#aaaaaa').setScale(1.4);
+        const penValue = this.scene.add.text(290, -165, this.player.attr.penetration().toFixed(1)).setColor('#aaaaaa').setScale(1.4);
         this.attrBlock.add(penLabel).add(penValue);
         const dodgeLabel = this.scene.add.text(140, -130, 'Dodge').setColor('#aaaaaa').setScale(1.4);
         const dodgeValue = this.scene.add.text(290, -130, this.player.attr.dodgeToString()).setColor('#aaaaaa').setScale(1.4);

@@ -18,13 +18,13 @@ class Actor extends Entity {
     }
 
     attack(targetActor) {
+        // attack logic
         const attackResult = {
             successful: false,
             damage: 0,
             crit: false,
             fatal: false
         };
-        // target tries to dodge
         if(!Root.rng.chance(targetActor.attr.dodge()/100)) {
             attackResult.successful = true;
             let damage = Root.rng.float(this.attr.minDmg(), this.attr.maxDmg());
@@ -39,6 +39,16 @@ class Actor extends Entity {
             attackResult.damage = damage;
             targetActor.attr.damage(damage); 
             attackResult.fatal = !targetActor.attr.alive();
+        }
+        // animation
+        if(attackResult.successful) {
+            Root.scene.levelHolder.animationDamageTaken(
+                attackResult.damage, attackResult.crit, targetActor.x, targetActor.y
+            );
+        } else {
+            Root.scene.levelHolder.animationMissed(
+                targetActor.x, targetActor.y
+            );
         }
         return attackResult;
     }
