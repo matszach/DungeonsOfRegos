@@ -32,7 +32,6 @@ class LevelHolder extends BaseSceneComponent {
 
     destroy() {
         this.outerContainer.destroy();
-        // window.removeEventListener('wheel'); // TODO might not work properly, no way to test yet
         return this;
     }
 
