@@ -16,10 +16,10 @@ class Monster extends Actor {
             const diffx = this.x - px; 
             const diffy = this.y - py;
             const dir = Root.rng.weightedPick(
-                [{x: -1, y: 0}, diffx > 0 ? 7 : 1],
-                [{x: 1, y: 0}, diffx < 0 ? 7 : 1],
-                [{x: 0, y: -1}, diffy > 0 ? 7 : 1],
-                [{x: 0, y: 1}, diffy < 0 ? 7 : 1]
+                [{x: -1, y: 0}, diffx > 0 ? 20 : 1],
+                [{x: 1, y: 0}, diffx < 0 ? 20 : 1],
+                [{x: 0, y: -1}, diffy > 0 ? 20 : 1],
+                [{x: 0, y: 1}, diffy < 0 ? 20 : 1]
             );
             if(this.x + dir.x === px && this.y + dir.y === py) {
                 this.attack(player);
