@@ -130,6 +130,12 @@ class LevelHolder extends BaseSceneComponent {
         this.addAnimation(circle, x, y, 0, 0, 1200, 0.99, 0.995);
     }
 
+    animationDamageHealed(heal, x, y) {
+        const textEntity = this.scene.add.text(0, 0, heal.toFixed(1)).setColor('#0f0').setFontSize(20).setFontStyle('bold');
+        const circle = this.scene.add.graphics(0, 0).fillStyle(0x00ff00, 0.2).fillCircle(0, 0, 0.5 * SIZES.SPRITE_SIZE);
+        this.addAnimation(textEntity, x, y - 0.5, Root.rng.float(-0.005, 0.005), Root.rng.float(-0.005, 0), 1200, 0.99, 0.998);
+        this.addAnimation(circle, x, y, 0, 0, 1200, 0.99, 0.995);
+    }
     
     animationMissed(x, y) {
         const textEntity = this.scene.add.text(0, 0, 'miss').setColor('#666').setFontSize(20).setFontStyle('bold');

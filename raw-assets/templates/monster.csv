@@ -1,3 +1,8 @@
 key,name,spriteset,frame,might,agility,health,senses,luck,minDmg,maxDmg,baseDefence,chanceToAct,ai,rarity
-orc,Orc,monsters,0,50,40,20,30,10,1,3,0,70,WANDERER,COMMON
-orc_guard,Orc guard,monsters,1,60,30,20,30,10,1,3,2,70,SENTINEL,COMMON
+ORC,Orc,monsters,0,50,40,30,30,10,1,3,0,60,WANDERER,COMMON
+ORC_GUARD,Orc guard,monsters,1,60,30,40,30,10,1,3,2,60,SENTINEL,COMMON
+SKELETON,Skeleton,monsters,10,40,20,30,30,10,1,3,5,60,WANDERER,COMMON
+SKELETON_FRENZY,Frenzy skeleton,monsters,11,50,30,20,30,10,2,4,5,80,WANDERER,UNCOMMON
+SKELETON_DEATH,Death skeleton,monsters,12,60,30,30,30,10,2,4,5,60,WANDERER,UNCOMMON
+SKELETON_LUCK,Luck skeleton,monsters,13,50,30,20,30,50,2,4,5,60,WANDERER,UNCOMMON
+VAMPIRE,Vampire,monsters,20,80,50,60,50,30,3,7,8,70,WANDERER,RARE

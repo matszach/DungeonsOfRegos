@@ -42,12 +42,22 @@ RUIN_STEEL_HELMET,Ruined steel helmet,helmets,31,HEAD,25,0,0,0,-4,0,3,UNCOMMON
 STEEL_GREATHELM,Steel greathelm,helmets,40,HEAD,100,0,0,0,-8,0,5,RARE
 RUIN_STEEL_GREATHELM,Ruined steel greathelm,helmets,41,HEAD,50,0,0,0,-8,0,4,RARE
 
-S_RNG,Silver ring,rings,10,FINGER,25,0,0,0,0,0,0,COMMON
-G_RNG,Golden ring,rings,0,FINGER,50,0,0,0,0,0,0,UNCOMMON
-S_RNG_M,Silver ring of might,rings,11,FINGER,50,5,0,0,0,0,0,UNCOMMON
-G_RNG_M,Golden ring of might,rings,1,FINGER,100,10,0,0,0,0,0,RARE
-S_RNG_A,Silver ring of agility,rings,12,FINGER,50,0,5,0,0,0,0,UNCOMMON
-G_RNG_A,Golden ring of agility,rings,2,FINGER,100,0,10,0,0,0,0,RARE
+SILV_RNG,Silver ring,rings,10,FINGER,25,0,0,0,0,0,0,COMMON
+GOLD_RNG,Golden ring,rings,0,FINGER,50,0,0,0,0,0,0,UNCOMMON
+SILV_RNG_MIGHT,Silver ring of might,rings,11,FINGER,50,5,0,0,0,0,0,UNCOMMON
+GOLD_RNG_MIGHT,Golden ring of might,rings,1,FINGER,100,10,0,0,0,0,0,RARE
+SILV_RNG_AGI,Silver ring of agility,rings,12,FINGER,50,0,5,0,0,0,0,UNCOMMON
+GOLD_RNG_AGI,Golden ring of agility,rings,2,FINGER,100,0,10,0,0,0,0,RARE
+SILV_RNG_LUCK,Silver ring of luck,rings,13,FINGER,50,0,0,0,0,5,0,UNCOMMON
+GOLD_RNG_LUCK,Golden ring of luck,rings,3,FINGER,100,0,0,0,0,10,0,RARE
+SILV_RNG_HEALTH,Silver ring of health,rings,14,FINGER,50,0,0,5,0,0,0,UNCOMMON
+GOLD_RNG_HEALTH,Golden ring of health,rings,4,FINGER,100,0,0,10,0,0,0,RARE
+SILV_RNG_SENS,Silver ring of senses,rings,15,FINGER,50,0,0,0,5,0,0,UNCOMMON
+GOLD_RNG_SENS,Golden ring of senses,rings,5,FINGER,100,0,0,0,10,0,0,RARE
+SILV_RNG_BALANCE,Silver ring of balance,rings,16,FINGER,100,2,2,2,2,2,0,RARE
+GOLD_RNG_BALANCE,Golden ring of balance,rings,6,FINGER,250,4,4,4,4,4,0,EPIC
+SILV_RNG_BALANCE,Silver ring of defence,rings,17,FINGER,100,0,0,0,0,0,2,RARE
+GOLD_RNG_BALANCE,Golden ring of defence,rings,7,FINGER,250,0,0,0,0,0,4,EPIC
 
 CHAIN_NECK_MIGHT,Chain necklace of might,necklaces,0,NECK,50,5,0,0,0,0,0,COMMON
 CHAIN_NECK_SENS,Chain necklace of senses,necklaces,1,NECK,50,0,0,0,5,0,0,COMMON
@@ -59,13 +69,3 @@ CHAIN_NECK_BLIND_LUCK,Chain necklace of blind luck,necklaces,6,NECK,100,0,0,0,-1
 CHAIN_NECK_BLOOD,Chain necklace of blood,necklaces,7,NECK,150,0,0,15,0,0,0,RARE
 CHAIN_NECK_DEFENCE,Chain necklace of defence,necklaces,8,NECK,100,0,0,0,0,0,2,UNCOMMON
 CHAIN_NECK_PACT,Chain necklace of a pact,necklaces,8,NECK,200,0,0,-10,0,20,0,RARE
-
-
-
-
-
-
-
-
-
-
