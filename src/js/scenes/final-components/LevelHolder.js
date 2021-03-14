@@ -78,12 +78,6 @@ class LevelHolder extends BaseSceneComponent {
         this.outerContainer.setScale(this.scale);
         this.scene.actionButtonGui?.container.setScale(this.scale)
         this.scene.fogOfWar?.container.setScale(this.scale)
-
-        // TODO base on this
-        // this.addAnimation(
-        //     this.scene.add.rectangle(0, 0, 100, 100, 0xff0000),
-        //     Root.player.x, Root.player.y, 0, 0, 100, 0.99, 0.99
-        // )
     }
 
     addAnimation(element, xStart, yStart, xVelocity, yVelocity, duration, fadeRatio, scaleRatio) {
