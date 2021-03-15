@@ -28,9 +28,8 @@ class Monster extends Actor {
                     this.actorMoveBy(dir.x, dir.y, Root.level);
                 }
             } else if(Math.abs(diffx) < 5 && Math.abs(diffy) < 5) {
-                console.log(diffx, diffy);
                 this.alert = true;
-                // alert animation ("!") here
+                Root.scene.levelHolder.animationMonsterAlert(this.x, this.y);
             }
            
         }

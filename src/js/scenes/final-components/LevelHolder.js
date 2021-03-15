@@ -119,22 +119,27 @@ class LevelHolder extends BaseSceneComponent {
         const textValue =  `${dmg.toFixed(1)}${isCrit ? '!' : ''}`;
         const textEntity = this.scene.add.text(0, 0, textValue).setColor('#f00').setFontSize(isCrit ? 30 : 20).setFontStyle(isCrit ? 'bold' : 'bolder');
         const circle = this.scene.add.graphics(0, 0).fillStyle(0xff0000, 0.2).fillCircle(0, 0, 0.5 * SIZES.SPRITE_SIZE);
-        this.addAnimation(textEntity, x, y - 0.5, Root.rng.float(-0.005, 0.005), Root.rng.float(-0.005, 0), 1200, 0.99, 0.998);
-        this.addAnimation(circle, x, y, 0, 0, 1200, 0.99, 0.995);
+        this.addAnimation(textEntity, x, y - 0.5, Root.rng.float(-0.005, 0.005), Root.rng.float(-0.005, 0), 300, 0.99, 0.998);
+        this.addAnimation(circle, x, y, 0, 0, 300, 0.99, 0.995);
     }
 
     animationDamageHealed(heal, x, y) {
         const textEntity = this.scene.add.text(0, 0, heal.toFixed(1)).setColor('#0f0').setFontSize(20).setFontStyle('bold');
         const circle = this.scene.add.graphics(0, 0).fillStyle(0x00ff00, 0.2).fillCircle(0, 0, 0.5 * SIZES.SPRITE_SIZE);
-        this.addAnimation(textEntity, x, y - 0.5, Root.rng.float(-0.005, 0.005), Root.rng.float(-0.005, 0), 1200, 0.99, 0.998);
-        this.addAnimation(circle, x, y, 0, 0, 1200, 0.99, 0.995);
+        this.addAnimation(textEntity, x, y - 0.5, Root.rng.float(-0.005, 0.005), Root.rng.float(-0.005, 0), 300, 0.99, 0.998);
+        this.addAnimation(circle, x, y, 0, 0, 300, 0.99, 0.995);
     }
     
     animationMissed(x, y) {
         const textEntity = this.scene.add.text(0, 0, 'miss').setColor('#666').setFontSize(20).setFontStyle('bold');
         const circle = this.scene.add.graphics(0, 0).fillStyle(0x666666, 0.2).fillCircle(0, 0, 0.5 * SIZES.SPRITE_SIZE);
-        this.addAnimation(textEntity, x, y - 0.5, Root.rng.float(-0.005, 0.005), Root.rng.float(-0.005, 0), 1200, 0.99, 0.998);
-        this.addAnimation(circle, x, y, 0, 0, 1200, 0.99, 0.995);
+        this.addAnimation(textEntity, x, y - 0.5, Root.rng.float(-0.005, 0.005), Root.rng.float(-0.005, 0), 300, 0.99, 0.998);
+        this.addAnimation(circle, x, y, 0, 0, 300, 0.99, 0.995);
+    }
+
+    animationMonsterAlert(x, y) {
+        const textEntity = this.scene.add.text(0, 0, '!').setColor('#f00').setFontSize(50).setFontStyle('bolder');
+        this.addAnimation(textEntity, x, y - 0.8, 0, 0, 30, 1, 1);
     }
     
 }

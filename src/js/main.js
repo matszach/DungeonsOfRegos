@@ -11,7 +11,8 @@ const Game = new Phaser.Game({
         LoadGameScene,
         HelpScene,
         OptionsScene,
-        GameScene
+        GameScene,
+        GameOverScene
     ]
 });
 

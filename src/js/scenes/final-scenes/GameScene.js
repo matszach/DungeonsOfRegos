@@ -66,6 +66,9 @@ class GameScene extends BaseScene {
             scene.updateVisibility();
             setTimeout(() => {
                 scene.playerActionBlock = false;
+                if(!Root.player.attr.alive()) { // player has died
+                    scene.toScene('GameOverScene');
+                }
             }, 80);
         }, 20);
     }
