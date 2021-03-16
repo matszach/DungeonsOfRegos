@@ -23,7 +23,14 @@ class Monster extends Actor {
                     [{x: 0, y: 1}, diffy < 0 ? 20 : 1]
                 );
                 if(this.x + dir.x === px && this.y + dir.y === py) {
-                    this.attack(player);
+                    const result = this.attack(player);
+                    if(result.successful) {
+                        Root.score.change('damageTaken', result.damage);
+                        Root.score.change('attacksTaken', 1);
+                        if(result.crit) {
+                            Root.score.change('critsTaken', 1);
+                        }
+                    }
                 } else if(this.actorCanMoveBy(dir.x, dir.y, Root.level)) {
                     this.actorMoveBy(dir.x, dir.y, Root.level);
                 }

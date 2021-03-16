@@ -7,6 +7,7 @@ class LevelExit extends Interactable {
 
     onInteract(player) {
         if(this.isOpened) {
+            Root.score.change('levelsCleared', 1);
             Root.scene.goToNextLevel();
         } else {
             if(player.inv.has({type: 'KEY', internal: 'NEXT_LEVEL_KEY'})) {

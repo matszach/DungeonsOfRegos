@@ -21,7 +21,8 @@ const Root = {
     scene: null,
     player: null,
     level: null,
-    rng: new Rng()
+    rng: new Rng(),
+    score: new Score()
 };
 
 // disable context menu

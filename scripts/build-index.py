@@ -25,7 +25,7 @@ dirs(['game/templates/', 'game/const/'])
 dirs(['lib/', 'util/', 'tools/'])
 many(['scenes/SceneTimer.js', 'scenes/BaseSceneComponent.js', 'scenes/BaseScene.js', 'scenes/MenuScene.js'])
 dirs(['scenes/final-components/', 'scenes/final-scenes/'])
-many(['game/Entity.js', 'game/actors/ActorAttributes.js', 'game/actors/Inventory.js', 
+many(['game/Score.js', 'game/Entity.js', 'game/actors/ActorAttributes.js', 'game/actors/Inventory.js', 
     'game/actors/Actor.js', 'game/actors/Player.js', 'game/actors/MonsterAI.js', 'game/actors/Monster.js'])
 many(['game/fields/Field.js'])
 dirs(['game/fields/final-fields/'])

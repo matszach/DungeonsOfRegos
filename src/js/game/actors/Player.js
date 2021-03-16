@@ -10,15 +10,25 @@ class Player extends Actor {
         const field = Root.level.get(x, y);
         if(this.actorCanMoveTo(x, y, Root.level)) {
             this.actorMoveTo(x, y, Root.level);
+            Root.score.change('stepsTaken', 1);
             if(!!field.item && this.inv.pickup(field.item.item)) {
                 field.item.destroy();
                 field.item = null;
+                Root.score.change('itemsPickedUp', 1);
             } 
         } else if(!!field.actor) {
             const result = this.attack(field.actor);
+            if(result.successful) {
+                Root.score.change('damageScored', 1);
+                Root.score.change('attacksScored', result.damage);
+                if(result.crit) {
+                    Root.score.change('critsScored', 1);
+                }
+            }
             if(result.fatal) {
                 field.actor.destroy();
                 field.actor = null;
+                Root.score.change('monstersKilled', 1);
             }
         } else if(!!field.interactable) {
             field.interactable.onInteract(this);
@@ -27,6 +37,5 @@ class Player extends Actor {
 
     prepareForNextLevel() {
         this.inv.purgeBeforeNextLevel();
-        this.attr.fullHeal();
     }
 }
