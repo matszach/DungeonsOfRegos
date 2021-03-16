@@ -7,7 +7,7 @@ const CONSUMABLE_TEMPLATES = {
 		frame: 0,
 		type: 'CONSUMABLE',
 		value: 10.0,
-		effect: 'HEALING 10-20',
+		effect: 'HEALING:10:20',
 		rarity: 'COMMON',
 	},
 	M_HEAL: {
@@ -18,7 +18,7 @@ const CONSUMABLE_TEMPLATES = {
 		frame: 10.0,
 		type: 'CONSUMABLE',
 		value: 25.0,
-		effect: 'HEALING 20-40',
+		effect: 'HEALING:20:40',
 		rarity: 'UNCOMMON',
 	},
 	G_HEAL: {
@@ -29,7 +29,7 @@ const CONSUMABLE_TEMPLATES = {
 		frame: 30.0,
 		type: 'CONSUMABLE',
 		value: 75.0,
-		effect: 'HEALING 40-60',
+		effect: 'HEALING:40:60',
 		rarity: 'RARE',
 	},
 };
