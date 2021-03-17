@@ -1,7 +1,7 @@
 const CONSUMABLE_TEMPLATES = {
-	L_HEAL: {
+	LIGHT_HEAL: {
 		id: 0,
-		internal: 'L_HEAL',
+		internal: 'LIGHT_HEAL',
 		name: 'Light healing potion',
 		spriteset: 'potions',
 		frame: 0,
@@ -10,9 +10,9 @@ const CONSUMABLE_TEMPLATES = {
 		effect: 'HEALING:10:20',
 		rarity: 'COMMON',
 	},
-	M_HEAL: {
+	MEDIUM_HEAL: {
 		id: 1,
-		internal: 'M_HEAL',
+		internal: 'MEDIUM_HEAL',
 		name: 'Medium healing potion',
 		spriteset: 'potions',
 		frame: 10.0,
@@ -21,15 +21,37 @@ const CONSUMABLE_TEMPLATES = {
 		effect: 'HEALING:20:40',
 		rarity: 'UNCOMMON',
 	},
-	G_HEAL: {
+	GREAT_HEAL: {
 		id: 2,
-		internal: 'G_HEAL',
-		name: 'Greater healing potion',
+		internal: 'GREAT_HEAL',
+		name: 'Great healing potion',
 		spriteset: 'potions',
 		frame: 30.0,
 		type: 'CONSUMABLE',
 		value: 75.0,
 		effect: 'HEALING:40:60',
 		rarity: 'RARE',
+	},
+	VOLITALE_HEAL: {
+		id: 3,
+		internal: 'VOLITALE_HEAL',
+		name: 'Volitale healing potion',
+		spriteset: 'potions',
+		frame: 40.0,
+		type: 'CONSUMABLE',
+		value: 80.0,
+		effect: 'HEALING:1:100',
+		rarity: 'RARE',
+	},
+	GREATER_HEAL: {
+		id: 4,
+		internal: 'GREATER_HEAL',
+		name: 'Greater healing potion',
+		spriteset: 'potions',
+		frame: 20.0,
+		type: 'CONSUMABLE',
+		value: 150.0,
+		effect: 'HEALING:60:90',
+		rarity: 'EPIC',
 	},
 };

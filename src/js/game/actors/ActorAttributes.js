@@ -29,6 +29,9 @@ class ActorAttributes {
 
     heal(heal) {
         this.damageTaken -= heal;  
+        if(this.damageTaken < 0) {
+            this.damageTaken = 0;
+        }
         return this;
     }
 

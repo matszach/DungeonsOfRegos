@@ -46,11 +46,7 @@ class ItemFactory {
         const typeKey = this._calcType(...typeInfo);
         const rarityKey = this._calcRarity(...rarityInfo);
         const options = ItemFactory.ALL_ITEMS.filter(i => i.type === typeKey && i.rarity === rarityKey);
-        // const template = Root.rng.pick(options);
-
-        // TEMP
-        const template = Root.rng.pick(ItemFactory.ALL_ITEMS);
-
+        const template = options.length > 0 ? Root.rng.pick(options) : Root.rng.pick(ItemFactory.ALL_ITEMS);
         return this._toItem(template);
     }
 
@@ -59,12 +55,12 @@ class ItemFactory {
         if(node.type === NODE.ITEM_WEAK) {
             item = this.pick(
                 [10, 5, 2, 1, 0],
-                [1, 1, 1, 1, 1, 1, 1, 2, 2, 1]
+                [1, 1, 1, 1, 1, 1, 1, 2, 4, 1]
             );
         } else if(node.type === NODE.ITEM_STRONG) {
             item = this.pick(
                 [5, 15, 10, 5, 1],
-                [2, 2, 2, 2, 2, 2, 2, 1, 2, 1]
+                [2, 2, 2, 2, 2, 2, 2, 1, 4, 1]
             );
         } else if(node.type === NODE.KEY) {
             item = new Key(KEY_TEMPLATES.NEXT_LEVEL_KEY);

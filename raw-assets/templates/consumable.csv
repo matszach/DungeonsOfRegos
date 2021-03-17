@@ -1,4 +1,6 @@
 key,name,spriteset,frame,type,value,effect,rarity
-L_HEAL,Light healing potion,potions,0,CONSUMABLE,10,HEALING:10:20,COMMON
-M_HEAL,Medium healing potion,potions,10,CONSUMABLE,25,HEALING:20:40,UNCOMMON
-G_HEAL,Greater healing potion,potions,30,CONSUMABLE,75,HEALING:40:60,RARE
+LIGHT_HEAL,Light healing potion,potions,0,CONSUMABLE,10,HEALING:10:20,COMMON
+MEDIUM_HEAL,Medium healing potion,potions,10,CONSUMABLE,25,HEALING:20:40,UNCOMMON
+GREAT_HEAL,Great healing potion,potions,30,CONSUMABLE,75,HEALING:40:60,RARE
+VOLITALE_HEAL,Volitale healing potion,potions,40,CONSUMABLE,80,HEALING:1:100,RARE
+GREATER_HEAL,Greater healing potion,potions,20,CONSUMABLE,150,HEALING:60:90,EPIC
