@@ -80,16 +80,16 @@ class CharacterSheetGui extends BaseSceneComponent {
     }
 
     makeItemTooltip(x, y, item) {
-        // if(!!item) {
-        //     this.itemTooltip = this.scene.add.rectangle(x, y + 30, 200, 80, 0x333333).setAlpha(0.8).setStrokeStyle(1, 0x999999).setOrigin(0.5, 0);
-        //     this.container.add(this.itemTooltip);
-        // }
+        if(!!item) {
+            this.itemTooltip = ItemTooltip.make(this.scene, x, y, item);
+            this.container.add(this.itemTooltip);
+        }
     }
 
     dropItemTooltip() {
-        // if(!!this.itemTooltip) {
-        //     this.itemTooltip.destroy();
-        // }
+        if(!!this.itemTooltip) {
+            this.itemTooltip.destroy();
+        }
     }
 
     displayItems() {
