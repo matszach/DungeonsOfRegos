@@ -28,7 +28,7 @@ class LevelFactory {
         this._createFields(fieldMap);
         this._createItems(nodes);
         this._createInteractables(nodes);
-        this._createMonsters(nodes);
+        this._createMonsters(nodes, diff, depth);
         this._placePlayer(nodes, player);
         this.level.prepareReferences();
         return this.level;
@@ -57,11 +57,11 @@ class LevelFactory {
         });
     }
 
-    _createMonsters(nodes) {
+    _createMonsters(nodes, diff, depth) {
         const mf = this.monsterFactory;
         const level = this.level;
         nodes.filter(n => [NODE.MONSTER_WEAK, NODE.MONSTER_STRONG].includes(n.type)).forEach(n => {
-            level.fields.get(n.x, n.y).actor = mf.create(n);
+            level.fields.get(n.x, n.y).actor = mf.create(n, diff, depth);
         });
     }
 

@@ -1,10 +1,20 @@
 class MonsterFactory {
 
-    create(node) {
+    create(node, diff, depth) {
         const template = this.pickTemplate(node);
         const monster = new Monster(template);
+        this.adjust(monster, diff, depth);
         monster.ai = this.getAI(template.ai);
         return monster;
+    }
+
+    adjust(monster, diff, depth) {
+        const modifier = (1 + diff * 0.15) * (1 + depth * 0.05);
+        monster.attr.base.might *= modifier;
+        monster.attr.base.agility *= modifier;
+        monster.attr.base.health *= modifier;
+        monster.attr.base.senses *= modifier;
+        monster.attr.base.luck *= modifier;
     }
 
     pickTemplate(node) {

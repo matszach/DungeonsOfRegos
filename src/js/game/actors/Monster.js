@@ -6,6 +6,7 @@ class Monster extends Actor {
         this.ai = null;
         this.chanceToAct = template.chanceToAct/100;
         this.alert = false;
+        this.heldItem = null;
     }
 
     doTurn() {
