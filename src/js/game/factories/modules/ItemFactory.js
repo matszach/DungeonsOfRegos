@@ -98,7 +98,6 @@ class ItemFactory {
                 typeInfo = [2, 2, 1, 1, 1, 1, 1, 2, 2, 0]
                 break;
         }
-        console.log(chance, rarityInfo, typeInfo);
         if(Root.rng.chance(chance)) {
             const item = this.pick(rarityInfo, typeInfo);
             monster.heldItem = item;
