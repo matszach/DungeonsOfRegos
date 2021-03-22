@@ -75,27 +75,27 @@ class ItemFactory {
             case RARITY.COMMON: 
                 chance = 0.33;
                 rarityInfo = [4, 2, 1, 0, 0];
-                typeInfo = [1, 1, 1, 1, 1, 1, 1, 2, 4, 1]
+                typeInfo = [1, 1, 1, 1, 1, 1, 1, 2, 4, 1];
                 break;
             case RARITY.UNCOMMON: 
                 chance = 0.50;
                 rarityInfo = [2, 4, 2, 1, 0];
-                typeInfo = [1, 1, 1, 1, 1, 1, 1, 2, 4, 1]
+                typeInfo = [1, 1, 1, 1, 1, 1, 1, 2, 4, 1];
                 break;
             case RARITY.RARE: 
                 chance = 0.66;
                 rarityInfo = [1, 2, 4, 2, 1];
-                typeInfo = [2, 1, 1, 1, 1, 1, 1, 2, 3, 1]
+                typeInfo = [2, 1, 1, 1, 1, 1, 1, 2, 3, 1];
                 break;
             case RARITY.EPIC: 
                 chance = 0.75;
                 rarityInfo = [0, 1, 2, 4, 2];
-                typeInfo = [2, 1, 1, 1, 1, 1, 1, 2, 2, 0]
+                typeInfo = [2, 1, 1, 1, 1, 1, 1, 2, 2, 0];
                 break;
             case RARITY.LEGENDARY: 
                 chance = 1;
                 rarityInfo = [0, 1, 2, 4, 2];
-                typeInfo = [2, 2, 1, 1, 1, 1, 1, 2, 2, 0]
+                typeInfo = [2, 2, 1, 1, 1, 1, 1, 2, 2, 0];
                 break;
         }
         if(Root.rng.chance(chance)) {
