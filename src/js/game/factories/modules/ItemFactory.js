@@ -67,5 +67,43 @@ class ItemFactory {
         }
         return new ItemEntity(item);
     }
-    
+
+    giveHeldItem(monster) {
+        let chance, rarityInfo, typeInfo;
+        switch(monster.rarity) {
+            default:
+            case RARITY.COMMON: 
+                chance = 0.33;
+                rarityInfo = [4, 2, 1, 0, 0];
+                typeInfo = [1, 1, 1, 1, 1, 1, 1, 2, 4, 1]
+                break;
+            case RARITY.UNCOMMON: 
+                chance = 0.50;
+                rarityInfo = [2, 4, 2, 1, 0];
+                typeInfo = [1, 1, 1, 1, 1, 1, 1, 2, 4, 1]
+                break;
+            case RARITY.RARE: 
+                chance = 0.66;
+                rarityInfo = [1, 2, 4, 2, 1];
+                typeInfo = [2, 1, 1, 1, 1, 1, 1, 2, 3, 1]
+                break;
+            case RARITY.EPIC: 
+                chance = 0.75;
+                rarityInfo = [0, 1, 2, 4, 2];
+                typeInfo = [2, 1, 1, 1, 1, 1, 1, 2, 2, 0]
+                break;
+            case RARITY.LEGENDARY: 
+                chance = 1;
+                rarityInfo = [0, 1, 2, 4, 2];
+                typeInfo = [2, 2, 1, 1, 1, 1, 1, 2, 2, 0]
+                break;
+        }
+        console.log(chance, rarityInfo, typeInfo);
+        if(Root.rng.chance(chance)) {
+            const item = this.pick(rarityInfo, typeInfo);
+            monster.heldItem = item;
+        }
+       
+    }
+
 }

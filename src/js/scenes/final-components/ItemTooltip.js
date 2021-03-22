@@ -34,7 +34,6 @@ class ItemTooltip extends BaseSceneComponent {
         }
         if(item.type === ITEM_TYPE.CONSUMABLE) {
             const effectString = item._template.effect.split(':');
-            console.log(item, effectString);
             switch(effectString[0]) {
                 case 'HEALING':
                     infoRows.push({value: `Restores ${effectString[1]}-${effectString[2]} health`});

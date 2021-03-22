@@ -26,6 +26,10 @@ class Player extends Actor {
                 }
             }
             if(result.fatal) {
+                if(!!field.actor.heldItem) {
+                    field.item = new ItemEntity(field.actor.heldItem);
+                    field.item.create(Root.scene, Root.scene.levelHolder.levelContainer, x, y); // FIXME move item entity to a layer under monster sprites
+                }
                 field.actor.destroy();
                 field.actor = null;
                 Root.score.change('monstersKilled', 1);

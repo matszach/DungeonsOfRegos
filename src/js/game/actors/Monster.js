@@ -2,6 +2,7 @@ class Monster extends Actor {
 
     constructor(template) {
         super(template);
+        this.rarity = RARITY[template.rarity];
         this.isMonster = true;
         this.ai = null;
         this.chanceToAct = template.chanceToAct/100;
