@@ -94,7 +94,7 @@ class ItemFactory {
                 break;
             case RARITY.LEGENDARY: 
                 chance = 1;
-                rarityInfo = [0, 1, 2, 4, 2];
+                rarityInfo = [0, 0, 1, 2, 4];
                 typeInfo = [2, 2, 1, 1, 1, 1, 1, 2, 2, 0];
                 break;
         }
